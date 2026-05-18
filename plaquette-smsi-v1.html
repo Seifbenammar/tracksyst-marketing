@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackSyst SMSI — Plaquette commerciale</title>
+    <style>
+        /* ==================================================================
+           PLAQUETTE MARKETING TrackSyst SMSI — V1.1.0
+           4 pages A4 portrait imprimables (Chrome Ctrl+P → PDF)
+           Self-contained : zéro dépendance externe, SVG inlinés.
+           ================================================================== */
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --primary-light: #e3f2fd;
+            --dark: #1a1a1a;
+            --gray: #495057;
+            --gray-light: #6c757d;
+            --bg-light: #f8f9fb;
+            --border: #dee2e6;
+            --danger: #dc3545;
+            --success: #198754;
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--dark);
+            background: #e0e0e0;
+            line-height: 1.5;
+            font-size: 11pt;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* === MISE EN PAGE A4 (portrait) === */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            position: relative;
+            background: white;
+            margin: 10mm auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+            page-break-after: always;
+        }
+        .page:last-child { page-break-after: auto; }
+
+        @media print {
+            html, body { background: white; }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+
+        /* === HEADER GLOBAL (sauf page 1) === */
+        .page-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 14mm;
+            padding: 4mm 12mm 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+        .page-header .logo-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .page-header .logo-mini-square {
+            width: 22px; height: 22px;
+            background: var(--primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-header .logo-mini-name {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .page-header .page-num {
+            font-size: 8pt;
+            color: var(--gray-light);
+            font-weight: 600;
+        }
+
+        /* === FOOTER GLOBAL === */
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10mm;
+            padding: 0 12mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 8pt;
+            color: var(--gray-light);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ==================================================================
+           PAGE 1 — Couverture
+           ================================================================== */
+        .cover-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 35mm 18mm 18mm;
+            height: 175mm;
+            position: relative;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .cover-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8mm;
+        }
+        .cover-iso-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0 auto 14mm;
+            display: block;
+            width: fit-content;
+        }
+        .cover-headline {
+            font-size: 22pt;
+            font-weight: 800;
+            line-height: 1.15;
+            text-align: center;
+            max-width: 160mm;
+            margin: 0 auto 8mm;
+        }
+        .cover-subtitle {
+            font-size: 11pt;
+            line-height: 1.55;
+            text-align: center;
+            max-width: 150mm;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.92);
+        }
+
+        .cover-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 6mm;
+            padding: 12mm 18mm 8mm;
+        }
+        .cover-stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 7mm 4mm;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .cover-stat-card .num {
+            font-size: 22pt;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .cover-stat-card .label {
+            font-size: 9pt;
+            color: var(--gray);
+            margin-top: 4mm;
+            font-weight: 600;
+        }
+
+        /* Mock-up dashboard */
+        .cover-mockup {
+            margin: 0 18mm;
+            background: #f8f9fb;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4mm;
+        }
+        .cover-mockup-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: var(--gray);
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+        .cover-mockup-title::before {
+            content: '●●●';
+            color: var(--gray-light);
+            font-size: 7pt;
+            letter-spacing: 2px;
+        }
+        .cover-kpi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2.5mm;
+        }
+        .cover-kpi-card {
+            background: white;
+            border-radius: 6px;
+            padding: 3mm;
+            border-left: 3px solid var(--primary);
+        }
+        .cover-kpi-card .kpi-val { font-size: 14pt; font-weight: 800; color: var(--dark); line-height: 1; }
+        .cover-kpi-card .kpi-lab { font-size: 6.5pt; color: var(--gray-light); margin-top: 2mm; }
+        .cover-kpi-card.danger { border-left-color: var(--danger); }
+        .cover-kpi-card.danger .kpi-val { color: var(--danger); }
+        .cover-kpi-card.success { border-left-color: var(--success); }
+        .cover-kpi-card.success .kpi-val { color: var(--success); }
+
+        .cover-bottom-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 4mm 18mm;
+            font-size: 8pt;
+            display: flex;
+            justify-content: space-between;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ==================================================================
+           PAGES INTÉRIEURES — Mise en page commune
+           ================================================================== */
+        .page-content {
+            padding: 18mm 14mm 14mm;
+            margin-top: 14mm;
+            height: calc(297mm - 14mm - 10mm);
+            overflow: hidden;
+        }
+        .section-title {
+            font-size: 18pt;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2mm;
+        }
+        .section-subtitle {
+            font-size: 11pt;
+            color: var(--gray);
+            font-weight: 500;
+            margin-bottom: 8mm;
+            line-height: 1.4;
+        }
+
+        /* ==================================================================
+           PAGE 2 — Pourquoi
+           ================================================================== */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+            margin-bottom: 8mm;
+        }
+        .compare-col {
+            border-radius: 8px;
+            padding: 5mm;
+            border: 2px solid;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .compare-col.bad {
+            border-color: var(--danger);
+            background: #fff5f5;
+        }
+        .compare-col.good {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        .compare-col h3 {
+            font-size: 11pt;
+            font-weight: 800;
+            margin-bottom: 4mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .compare-col.bad h3 { color: var(--danger); }
+        .compare-col.good h3 { color: var(--primary); }
+        .compare-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .compare-col li {
+            padding: 2mm 0 2mm 6mm;
+            font-size: 9pt;
+            line-height: 1.4;
+            position: relative;
+        }
+        .compare-col.bad li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: var(--danger);
+            font-weight: 700;
+        }
+        .compare-col.good li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .workflow {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 5mm;
+            margin-bottom: 5mm;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .workflow h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--gray);
+            margin-bottom: 4mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2mm;
+            align-items: stretch;
+        }
+        .workflow-step {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 3mm;
+            text-align: center;
+            font-size: 8pt;
+            position: relative;
+        }
+        .workflow-step .num {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            width: 16px; height: 16px;
+            line-height: 16px;
+            border-radius: 50%;
+            font-size: 8pt;
+            font-weight: 700;
+            margin-bottom: 2mm;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .workflow-step .name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 8.5pt;
+        }
+        .workflow-step .iso {
+            color: var(--gray-light);
+            font-size: 7pt;
+            margin-top: 1mm;
+        }
+
+        .principles {
+            border-left: 4px solid var(--primary);
+            padding: 4mm 5mm;
+            background: var(--primary-light);
+            border-radius: 0 8px 8px 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .principles h3 {
+            font-size: 11pt;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 3mm;
+        }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4mm;
+        }
+        .principle .p-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1mm;
+        }
+        .principle .p-desc {
+            font-size: 8.5pt;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* ==================================================================
+           PAGE 3 — Modules + Livrables
+           ================================================================== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+            margin-bottom: 5mm;
+        }
+        .module-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 3.5mm 4mm;
+            background: white;
+        }
+        .module-card .m-head {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+            margin-bottom: 2mm;
+        }
+        .module-card .m-icon {
+            width: 28px; height: 28px;
+            border-radius: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13pt;
+            font-weight: 700;
+            flex-shrink: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .module-card .m-name {
+            font-size: 10pt;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        .module-card .m-iso {
+            font-size: 7pt;
+            color: var(--gray-light);
+            margin-top: 1px;
+        }
+        .module-card .m-desc {
+            font-size: 8.5pt;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        .deliverables {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 5mm;
+            margin-bottom: 5mm;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .deliverables h3 {
+            font-size: 12pt;
+            font-weight: 800;
+            margin-bottom: 4mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5mm 6mm;
+        }
+        .deliverable {
+            font-size: 9pt;
+            display: flex;
+            align-items: flex-start;
+            gap: 4mm;
+            line-height: 1.3;
+        }
+        .deliverable::before {
+            content: '✓';
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .security-pavé {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4mm 5mm;
+            background: var(--bg-light);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .security-pavé h3 {
+            font-size: 10pt;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm 6mm;
+        }
+        .security-item {
+            font-size: 8.5pt;
+            color: var(--gray);
+            padding-left: 5mm;
+            position: relative;
+            line-height: 1.4;
+        }
+        .security-item::before {
+            content: '🔒';
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+
+        /* ==================================================================
+           PAGE 4 — Bénéfices + Audiences + CTA
+           ================================================================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 3mm;
+            margin-bottom: 8mm;
+        }
+        .benefit-card {
+            background: var(--primary-light);
+            border-radius: 8px;
+            padding: 5mm 3mm;
+            text-align: center;
+            border: 2px solid var(--primary);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .benefit-card .b-num {
+            font-size: 20pt;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .benefit-card .b-lab {
+            font-size: 8pt;
+            color: var(--dark);
+            margin-top: 3mm;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .audiences {
+            margin-bottom: 8mm;
+        }
+        .audiences h3 {
+            font-size: 14pt;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4mm;
+        }
+        .audiences-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5mm;
+        }
+        .audience-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 5mm;
+            background: white;
+        }
+        .audience-card .a-icon {
+            font-size: 22pt;
+            margin-bottom: 2mm;
+        }
+        .audience-card .a-title {
+            font-size: 11pt;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2mm;
+        }
+        .audience-card .a-desc {
+            font-size: 9pt;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 8mm 6mm;
+            text-align: center;
+            margin-bottom: 6mm;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .cta h2 {
+            font-size: 18pt;
+            font-weight: 800;
+            margin-bottom: 3mm;
+            line-height: 1.15;
+        }
+        .cta p.cta-sub {
+            font-size: 10pt;
+            margin-bottom: 6mm;
+            opacity: 0.92;
+        }
+        .cta-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4mm;
+            margin-top: 4mm;
+        }
+        .cta-contact {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            padding: 4mm 2mm;
+            font-size: 9pt;
+        }
+        .cta-contact .ic { font-size: 14pt; margin-bottom: 1mm; display: block; }
+        .cta-contact .lab { font-weight: 600; }
+
+        .footer-large {
+            position: absolute;
+            bottom: 10mm;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 5mm 14mm;
+            font-size: 8pt;
+            line-height: 1.5;
+            text-align: center;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .footer-large strong { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+
+<!-- ====================================================================== -->
+<!-- PAGE 1 — COUVERTURE                                                    -->
+<!-- ====================================================================== -->
+<div class="page" id="page-1">
+    <div class="cover-banner">
+        <div class="cover-logo">
+            <!-- Logo stacked TrackSyst SMSI (SVG inline, fond transparent → blanc sur bandeau bleu) -->
+            <svg viewBox="0 0 200 200" width="120" height="120" role="img" aria-label="TrackSyst SMSI">
+                <rect x="50" y="20" width="100" height="100" rx="20" ry="20" fill="#ffffff"/>
+                <g transform="translate(65 35) scale(4.375)" fill="#0d6efd">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                </g>
+                <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" text-anchor="middle">
+                    <text x="100" y="148" font-size="22" font-weight="700" fill="#ffffff">TrackSyst SMSI</text>
+                    <text x="100" y="170" font-size="10" fill="rgba(255,255,255,0.85)">Système de management de la</text>
+                    <text x="100" y="184" font-size="10" fill="rgba(255,255,255,0.85)">sécurité de l'information</text>
+                </g>
+            </svg>
+        </div>
+
+        <span class="cover-iso-badge">ISO/IEC 27001:2022 · Annexe A · 93 contrôles</span>
+
+        <h1 class="cover-headline">
+            La plateforme tout-en-un pour gérer et auditer votre conformité ISO 27001
+        </h1>
+
+        <p class="cover-subtitle">
+            Centralisez votre conformité, vos risques, vos contrôles et votre plan d'actions.
+            Générez en un clic vos livrables d'audit. Tracez chaque modification grâce à un journal
+            d'audit natif § 9.2. Multi-tenant strict, données isolées par organisation.
+        </p>
+    </div>
+
+    <div class="cover-stats">
+        <div class="cover-stat-card">
+            <div class="num">93</div>
+            <div class="label">contrôles<br>Annexe A préchargés</div>
+        </div>
+        <div class="cover-stat-card">
+            <div class="num">7</div>
+            <div class="label">livrables d'audit<br>générés automatiquement</div>
+        </div>
+        <div class="cover-stat-card">
+            <div class="num">6</div>
+            <div class="label">modules intégrés<br>conformité → pilotage</div>
+        </div>
+    </div>
+
+    <div class="cover-mockup">
+        <div class="cover-mockup-title">Tableau de bord SMSI · vue exemple</div>
+        <div class="cover-kpi-grid">
+            <div class="cover-kpi-card success">
+                <div class="kpi-val">68%</div>
+                <div class="kpi-lab">Taux mise en œuvre SoA</div>
+            </div>
+            <div class="cover-kpi-card">
+                <div class="kpi-val">93</div>
+                <div class="kpi-lab">Contrôles évalués / 93</div>
+            </div>
+            <div class="cover-kpi-card danger">
+                <div class="kpi-val">12</div>
+                <div class="kpi-lab">Risques critiques</div>
+            </div>
+            <div class="cover-kpi-card">
+                <div class="kpi-val">47</div>
+                <div class="kpi-lab">Actions ouvertes</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover-bottom-footer">
+        <span><strong>tracksyst.cloud</strong> · support@tracksyst.cloud</span>
+        <span>Édition 2026 · V1.1.0 · Page 1 / 4</span>
+    </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- PAGE 2 — POURQUOI                                                      -->
+<!-- ====================================================================== -->
+<div class="page" id="page-2">
+    <div class="page-header">
+        <div class="logo-mini">
+            <div class="logo-mini-square">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="white">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </div>
+            <div class="logo-mini-name">TrackSyst SMSI</div>
+        </div>
+        <div class="page-num">Page 2 / 4</div>
+    </div>
+
+    <div class="page-content">
+        <h2 class="section-title">Pourquoi TrackSyst SMSI ?</h2>
+        <p class="section-subtitle">
+            L'ISO 27001 est exigeante. Le passer en Excel est devenu intenable.
+        </p>
+
+        <div class="compare-grid">
+            <div class="compare-col bad">
+                <h3>✕ Sans outil dédié</h3>
+                <ul>
+                    <li>Excel éparpillé entre plusieurs disques et collaborateurs</li>
+                    <li>SoA tenue manuellement, formules qui cassent au moindre changement</li>
+                    <li>Plans d'actions perdus dans Outlook ou des post-its</li>
+                    <li>Aucun audit log § 9.2 : impossible de retracer qui a changé quoi</li>
+                    <li>Stress pré-audit : reconstruction du dossier en urgence</li>
+                    <li>Perte de connaissance au départ du RSSI : zéro continuité</li>
+                </ul>
+            </div>
+            <div class="compare-col good">
+                <h3>✓ Avec TrackSyst SMSI</h3>
+                <ul>
+                    <li>Toutes les données SMSI centralisées dans une seule plateforme web</li>
+                    <li>SoA des 93 contrôles Annexe A préchargée et reliée aux risques</li>
+                    <li>Plan d'actions unifié multi-origines (NC, audits, revue, RGPD…)</li>
+                    <li>Audit log natif § 9.2 : qui, quoi, quand, avant/après — tracé en BDD</li>
+                    <li>Livrables d'audit générés en 1 clic (Excel, PDF, PowerPoint)</li>
+                    <li>Multi-organisations strictement isolées (scoping client_id forcé)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="workflow">
+            <h3>Le workflow ISO 27001 reflété dans l'outil</h3>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="num">1</div>
+                    <div class="name">Contexte</div>
+                    <div class="iso">§ 4</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="num">2</div>
+                    <div class="name">Risques</div>
+                    <div class="iso">§ 6.1.2 · 8.2</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="num">3</div>
+                    <div class="name">SoA</div>
+                    <div class="iso">§ 6.1.3 d</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="num">4</div>
+                    <div class="name">Plan d'actions</div>
+                    <div class="iso">§ 6.2 · 10</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="num">5</div>
+                    <div class="name">Pilotage</div>
+                    <div class="iso">§ 9.1 · 9.3</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principles">
+            <h3>Conçu pour la réalité du terrain</h3>
+            <div class="principles-grid">
+                <div class="principle">
+                    <div class="p-title">Conformité normative stricte</div>
+                    <div class="p-desc">
+                        Architecture pensée autour des clauses ISO 27001:2022 (§ 4 à § 10 + Annexe A).
+                        Pas de réinterprétation, pas de simplification réductrice.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div class="p-title">Simplicité d'usage</div>
+                    <div class="p-desc">
+                        Pas de formation longue. Un RSSI démarre sa SoA en 30 minutes. Workflow
+                        guidé : contexte → risques → SoA → actions → pilotage.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div class="p-title">Traçabilité bout-en-bout</div>
+                    <div class="p-desc">
+                        Chaque modification est tracée (qui, quand, avant/après). Conformité native
+                        avec les exigences d'audit interne § 9.2.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>TrackSyst SMSI — Plaquette commerciale</span>
+        <span>tracksyst.cloud</span>
+    </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- PAGE 3 — MODULES + LIVRABLES                                           -->
+<!-- ====================================================================== -->
+<div class="page" id="page-3">
+    <div class="page-header">
+        <div class="logo-mini">
+            <div class="logo-mini-square">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="white">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </div>
+            <div class="logo-mini-name">TrackSyst SMSI</div>
+        </div>
+        <div class="page-num">Page 3 / 4</div>
+    </div>
+
+    <div class="page-content">
+        <h2 class="section-title">6 modules intégrés</h2>
+        <p class="section-subtitle">De la conformité réglementaire au pilotage SMSI, tout est connecté.</p>
+
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">📋</div>
+                    <div>
+                        <div class="m-name">Conformité</div>
+                        <div class="m-iso">§ 4.2 · A.5.31 · A.5.34</div>
+                    </div>
+                </div>
+                <div class="m-desc">Registre des exigences légales, réglementaires, contractuelles, internes et normatives. Évaluations périodiques tracées.</div>
+            </div>
+
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">📦</div>
+                    <div>
+                        <div class="m-name">Actifs</div>
+                        <div class="m-iso">A.5.9 · A.5.10</div>
+                    </div>
+                </div>
+                <div class="m-desc">Inventaire des actifs informationnels avec propriétaire et valeur CIA (Confidentialité, Intégrité, Disponibilité). Volet RGPD intégré.</div>
+            </div>
+
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">⚠️</div>
+                    <div>
+                        <div class="m-name">Risques</div>
+                        <div class="m-iso">§ 6.1.2 · 8.2</div>
+                    </div>
+                </div>
+                <div class="m-desc">Appréciation actifs/menaces/vulnérabilités selon ISO 27005. Matrice de criticité paramétrable. Heatmap inhérente + résiduelle.</div>
+            </div>
+
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">✅</div>
+                    <div>
+                        <div class="m-name">SoA</div>
+                        <div class="m-iso">§ 6.1.3 d</div>
+                    </div>
+                </div>
+                <div class="m-desc">93 contrôles de l'Annexe A préchargés. Applicabilité justifiée, statut de mise en œuvre, référence documentaire.</div>
+            </div>
+
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">🎯</div>
+                    <div>
+                        <div class="m-name">Plan d'actions</div>
+                        <div class="m-iso">§ 6.2 · 9.2 · 10.1 · 10.2</div>
+                    </div>
+                </div>
+                <div class="m-desc">Registre unifié multi-origines (NC, audits, revue, incidents). Preuves justificatives attachées. Vérification d'efficacité tracée.</div>
+            </div>
+
+            <div class="module-card">
+                <div class="m-head">
+                    <div class="m-icon">📊</div>
+                    <div>
+                        <div class="m-name">Pilotage SMSI</div>
+                        <div class="m-iso">§ 9.1 · 9.3</div>
+                    </div>
+                </div>
+                <div class="m-desc">Dashboard temps réel, indicateurs § 9.1, exports Excel/PDF/PowerPoint, document de revue de direction § 9.3.2 a-g.</div>
+            </div>
+        </div>
+
+        <div class="deliverables">
+            <h3>📁 7 livrables d'audit générés automatiquement</h3>
+            <div class="deliverables-grid">
+                <div class="deliverable">Déclaration d'Applicabilité (Excel, 93 contrôles avec justifications)</div>
+                <div class="deliverable">Registre des risques (Excel + PDF imprimable paysage)</div>
+                <div class="deliverable">Registre des actions (Excel + PDF avec filtres respectés)</div>
+                <div class="deliverable">Rapport SMSI complet (PDF, livrable principal certificateur)</div>
+                <div class="deliverable">Revue de direction (PowerPoint § 9.3.2 a-g, 15 slides)</div>
+                <div class="deliverable">Pack Excel consolidé (multi-feuilles : Synthèse + 6 onglets détails)</div>
+                <div class="deliverable">Audit log ISO § 9.2 (mutations tracées + export CSV)</div>
+                <div class="deliverable" style="opacity: 0.85;">…et exports par module (Conformité, SoA, Actifs)</div>
+            </div>
+        </div>
+
+        <div class="security-pavé">
+            <h3>🔐 Sécurité et conformité de la plateforme elle-même</h3>
+            <div class="security-grid">
+                <div class="security-item"><strong>Multi-tenant strict</strong> : scoping <code>client_id</code> forcé par construction</div>
+                <div class="security-item"><strong>Audit log natif</strong> : toute mutation tracée (qui, quoi, quand, avant/après)</div>
+                <div class="security-item"><strong>Hébergement OVH France</strong> : données stockées en UE (RGPD)</div>
+                <div class="security-item"><strong>Authentification</strong> : bcrypt cost 12, sessions HTTPOnly + Secure + SameSite</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>TrackSyst SMSI — Plaquette commerciale</span>
+        <span>tracksyst.cloud</span>
+    </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- PAGE 4 — BÉNÉFICES + AUDIENCES + CTA                                   -->
+<!-- ====================================================================== -->
+<div class="page" id="page-4">
+    <div class="page-header">
+        <div class="logo-mini">
+            <div class="logo-mini-square">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="white">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </div>
+            <div class="logo-mini-name">TrackSyst SMSI</div>
+        </div>
+        <div class="page-num">Page 4 / 4</div>
+    </div>
+
+    <div class="page-content">
+        <h2 class="section-title">Bénéfices mesurables</h2>
+        <p class="section-subtitle">Ce que vous gagnez concrètement avec TrackSyst SMSI.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="b-num">−70%</div>
+                <div class="b-lab">de temps de préparation d'audit</div>
+            </div>
+            <div class="benefit-card">
+                <div class="b-num">100%</div>
+                <div class="b-lab">de traçabilité ISO § 9.2</div>
+            </div>
+            <div class="benefit-card">
+                <div class="b-num">93</div>
+                <div class="b-lab">contrôles préchargés et reliés</div>
+            </div>
+            <div class="benefit-card">
+                <div class="b-num">0 €</div>
+                <div class="b-lab">d'installation · 0 formation longue</div>
+            </div>
+        </div>
+
+        <div class="audiences">
+            <h3>Conçu pour deux profils</h3>
+            <div class="audiences-grid">
+                <div class="audience-card">
+                    <div class="a-icon">👤</div>
+                    <div class="a-title">RSSI &amp; DSI de PME</div>
+                    <div class="a-desc">
+                        <strong>50 à 500 salariés.</strong> Vous cherchez un outil <strong>simple, structuré
+                        et conforme</strong> pour piloter votre SMSI sans Excel ni consultant externe à
+                        plein temps. TrackSyst vous donne le cadre normatif clé en main.
+                    </div>
+                </div>
+                <div class="audience-card">
+                    <div class="a-icon">🎓</div>
+                    <div class="a-title">Consultants ISO 27001</div>
+                    <div class="a-desc">
+                        <strong>Plateforme multi-clients.</strong> Vous accompagnez plusieurs PME vers
+                        la certification. TrackSyst vous offre une plateforme <strong>rigoureuse et
+                        autonomisante</strong> qui industrialise votre méthodologie.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>🚀 Demandez une démonstration</h2>
+            <p class="cta-sub">15 minutes pour découvrir TrackSyst SMSI sur votre cas concret.</p>
+            <div class="cta-contacts">
+                <div class="cta-contact">
+                    <span class="ic">🌐</span>
+                    <span class="lab">tracksyst.cloud</span>
+                </div>
+                <div class="cta-contact">
+                    <span class="ic">✉</span>
+                    <span class="lab">support@tracksyst.cloud</span>
+                </div>
+                <div class="cta-contact">
+                    <span class="ic">🔗</span>
+                    <span class="lab">app.tracksyst.cloud</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-large">
+        <strong>TrackSyst SMSI</strong> — Plateforme française de management de la sécurité de
+        l'information conforme ISO/IEC 27001:2022.<br>
+        Édité par <strong>WEBMANITECH SARL</strong> — RC 74599 — IF 66050358 — ICE 003564783000079 — Capital 100 000 MAD.<br>
+        Siège : Lot 403, Mehdia 2, Kénitra — Maroc · contact@webmanitech.com<br>
+        Hébergement utilisateurs : OVH SAS, France · © 2026 · Tous droits réservés.
+    </div>
+</div>
+
+</body>
+</html>

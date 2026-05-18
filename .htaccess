@@ -1,0 +1,88 @@
+# =====================================================================
+# TrackSyst — Marketing (tracksyst.cloud)
+# .htaccess pour OVH mutualisé (Apache 2.4)
+# =====================================================================
+# À déposer à la racine /www/ de l'hébergement tracksyst.cloud.
+# =====================================================================
+
+# --- 1. Forcer HTTPS ---------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirection HTTP → HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{ENV:HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Forcer www → racine (optionnel : décommenter si vous voulez racine)
+    # RewriteCond %{HTTP_HOST} ^www\.tracksyst\.cloud$ [NC]
+    # RewriteRule ^(.*)$ https://tracksyst.cloud/$1 [R=301,L]
+
+    # Trailing slash propre : /smsi → /smsi/
+    # (évite que /smsi pointe sur le fichier /smsi.html s'il existe)
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteRule ^(.+)$ /$1/ [R=301,L]
+</IfModule>
+
+# --- 2. Page 404 personnalisée ----------------------------------------
+ErrorDocument 404 /404.html
+
+# --- 3. Headers de sécurité -------------------------------------------
+<IfModule mod_headers.c>
+    # Empêche l'inclusion dans une iframe externe (clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Empêche le navigateur de deviner le MIME (XSS reflected)
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Active la protection XSS du navigateur (legacy mais utile)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Politique référente (envoyer Referer uniquement même origine)
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # HSTS — force HTTPS pour 6 mois (activer après vérification SSL OK)
+    # Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains"
+
+    # CSP minimaliste — landing 100% inline, aucune ressource externe
+    Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'self';"
+
+    # Cache assets statiques (1 an si fingerprintés, sinon 1 semaine)
+    <FilesMatch "\.(css|js|woff2|woff|ttf|eot|svg|png|jpg|jpeg|gif|ico|webp)$">
+        Header set Cache-Control "public, max-age=604800, immutable"
+    </FilesMatch>
+
+    # Pas de cache pour les pages HTML (toujours servir la dernière version)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# --- 4. Compression gzip ---------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- 5. Index par défaut ---------------------------------------------
+DirectoryIndex index.html
+
+# --- 6. Désactiver l'affichage du contenu des dossiers ---------------
+Options -Indexes
+
+# --- 7. Bloquer l'accès aux fichiers cachés (sauf .well-known) -------
+<FilesMatch "^\.(?!well-known)">
+    Require all denied
+</FilesMatch>
+
+# --- 8. Bloquer accès aux fichiers de configuration -------------------
+<FilesMatch "\.(md|yml|yaml|json|sql|env)$">
+    Require all denied
+</FilesMatch>

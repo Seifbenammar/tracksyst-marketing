@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackSyst SMSI — Plateforme ISO 27001 pour PME et consultants</title>
+    <meta name="description" content="Plateforme française tout-en-un pour gérer et auditer votre conformité ISO/IEC 27001:2022. SoA 93 contrôles préchargés, gestion des risques, plan d'actions, audit log natif et 7 livrables d'audit générés automatiquement.">
+    <meta name="keywords" content="ISO 27001, SMSI, RSSI, conformité, sécurité information, ISO 27001:2022, SoA, audit log, plan d'actions, PME industrielle, consultant ISO 27001">
+    <meta name="author" content="TrackSyst — WebManiTech SARL">
+
+    <!-- Open Graph (partage social) -->
+    <meta property="og:title" content="TrackSyst SMSI — Plateforme ISO 27001 pour PME">
+    <meta property="og:description" content="Centralisez votre conformité ISO 27001. SoA 93 contrôles, risques, plan d'actions, 7 livrables d'audit auto-générés. Hébergement France.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tracksyst.cloud/smsi">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="TrackSyst SMSI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TrackSyst SMSI — Plateforme ISO 27001 pour PME">
+    <meta name="twitter:description" content="Plateforme française tout-en-un pour gérer et auditer votre conformité ISO 27001.">
+
+    <!-- Favicons (référence dossier projet TrackSyst) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <meta name="theme-color" content="#0d6efd">
+
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TrackSyst SMSI",
+      "applicationCategory": "BusinessApplication",
+      "description": "Plateforme française tout-en-un pour gérer et auditer la conformité ISO/IEC 27001:2022.",
+      "operatingSystem": "Web",
+      "url": "https://app.tracksyst.cloud",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TrackSyst",
+        "url": "https://tracksyst.cloud"
+      }
+    }
+    </script>
+
+    <style>
+        /* ==================================================================
+           LANDING PAGE TrackSyst SMSI — tracksyst.cloud/smsi
+           Mobile-first responsive, self-contained, zéro dépendance externe.
+           Cohérence visuelle avec la plaquette commerciale.
+           ================================================================== */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --primary-light: #e3f2fd;
+            --primary-soft: #f0f7ff;
+            --dark: #0f172a;
+            --gray-900: #1a1a1a;
+            --gray-700: #495057;
+            --gray-500: #6c757d;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --bg: #ffffff;
+            --bg-soft: #f8fafc;
+            --border: #e2e8f0;
+            --danger: #dc3545;
+            --success: #198754;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 50px rgba(13,110,253,0.18);
+            --radius: 10px;
+            --radius-lg: 16px;
+            --container: 1180px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--gray-900);
+            background: var(--bg);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === HEADER STICKY === */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .brand-icon {
+            width: 36px; height: 36px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-desktop a {
+            color: var(--gray-700);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color .15s;
+        }
+        .nav-desktop a:hover { color: var(--primary); }
+        .nav-cta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* === BOUTONS === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: var(--radius);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all .15s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--gray-700);
+            border-color: transparent;
+            padding: 8px 14px;
+        }
+        .btn-ghost:hover {
+            background: var(--gray-100);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        .btn-white:hover {
+            background: var(--gray-100);
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .btn-lg {
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 80px 0 100px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(13,110,253,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(13,110,253,0.05) 0%, transparent 50%),
+                linear-gradient(180deg, var(--bg-soft) 0%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (min-width: 1024px) {
+            .hero-inner { grid-template-columns: 1.1fr 1fr; gap: 60px; }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 48px; }
+        }
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+        .hero-sub {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 480px;
+        }
+        .hero-stat .num {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .hero-stat .lab {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+
+        /* Mock-up dashboard */
+        .hero-mock {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 18px;
+            border: 1px solid var(--border);
+        }
+        .hero-mock-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .hero-mock-bar span {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--gray-300);
+        }
+        .hero-mock-bar span:nth-child(1) { background: #fc6157; }
+        .hero-mock-bar span:nth-child(2) { background: #fdbc40; }
+        .hero-mock-bar span:nth-child(3) { background: #34c84a; }
+        .hero-mock-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-500);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hero-kpis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .hero-kpi {
+            background: var(--bg-soft);
+            border-radius: 8px;
+            padding: 14px;
+            border-left: 3px solid var(--primary);
+        }
+        .hero-kpi.success { border-left-color: var(--success); }
+        .hero-kpi.danger { border-left-color: var(--danger); }
+        .hero-kpi .val {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1;
+        }
+        .hero-kpi.success .val { color: var(--success); }
+        .hero-kpi.danger .val { color: var(--danger); }
+        .hero-kpi .lab {
+            font-size: 11px;
+            color: var(--gray-500);
+            margin-top: 6px;
+        }
+        .hero-mock-list {
+            background: var(--bg-soft);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+        .hero-mock-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 12px;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-mock-row:last-child { border-bottom: none; }
+        .hero-mock-row .lbl { font-weight: 500; }
+        .hero-mock-row .val {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 11px;
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* === SECTIONS GÉNÉRIQUES === */
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-soft); }
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 14px;
+            letter-spacing: -0.4px;
+        }
+        @media (min-width: 768px) {
+            .section-title { font-size: 38px; }
+        }
+        .section-sub {
+            font-size: 17px;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* === COMPARATIF === */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .compare-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .compare-col {
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 2px solid;
+        }
+        .compare-col.bad {
+            border-color: #fecaca;
+            background: #fef2f2;
+        }
+        .compare-col.good {
+            border-color: var(--primary);
+            background: var(--primary-soft);
+        }
+        .compare-col h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .compare-col.bad h3 { color: var(--danger); }
+        .compare-col.good h3 { color: var(--primary-dark); }
+        .compare-col ul { list-style: none; }
+        .compare-col li {
+            padding: 10px 0 10px 32px;
+            font-size: 15px;
+            line-height: 1.5;
+            position: relative;
+            color: var(--gray-700);
+        }
+        .compare-col li::before {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .compare-col.bad li::before {
+            content: '✕';
+            background: #fee2e2;
+            color: var(--danger);
+        }
+        .compare-col.good li::before {
+            content: '✓';
+            background: #dcfce7;
+            color: var(--success);
+        }
+
+        /* === WORKFLOW === */
+        .workflow {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .workflow { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+        }
+        .step {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 16px;
+            text-align: center;
+            position: relative;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        .step .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px; height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .step .step-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .step .step-iso {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-family: ui-monospace, "SF Mono", Monaco, monospace;
+        }
+
+        /* === MODULES === */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 640px) { .modules-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .modules-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .module {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all .2s;
+        }
+        .module:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .module-icon {
+            width: 48px; height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .module h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .module .module-iso {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-family: ui-monospace, "SF Mono", Monaco, monospace;
+            margin-bottom: 10px;
+        }
+        .module p {
+            font-size: 14.5px;
+            color: var(--gray-700);
+            line-height: 1.55;
+        }
+
+        /* === LIVRABLES (section bleue) === */
+        .deliverables-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .deliverables-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .deliverables-section .section-eyebrow { color: white; opacity: 0.9; }
+        .deliverables-section .section-title { color: white; }
+        .deliverables-section .section-sub { color: rgba(255,255,255,0.9); }
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        @media (min-width: 640px) { .deliverables-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .deliverables-grid { grid-template-columns: 1fr 1fr; } }
+        .deliverable {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: background .2s;
+        }
+        .deliverable:hover { background: rgba(255,255,255,0.15); }
+        .deliverable-icon {
+            width: 32px; height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .deliverable-text {
+            flex: 1;
+        }
+        .deliverable-text strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .deliverable-text span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* === BÉNÉFICES === */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 1024px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+        .benefit {
+            background: var(--primary-soft);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-lg);
+            padding: 28px 20px;
+            text-align: center;
+            transition: all .2s;
+        }
+        .benefit:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+        .benefit .b-num {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .benefit .b-lab {
+            font-size: 14px;
+            color: var(--gray-700);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* === AUDIENCES === */
+        .audiences-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) { .audiences-grid { grid-template-columns: 1fr 1fr; } }
+        .audience {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: all .2s;
+        }
+        .audience:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .audience-icon {
+            width: 64px; height: 64px;
+            background: var(--primary-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+        .audience h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .audience .audience-sub {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .audience p {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* === SÉCURITÉ === */
+        .security {
+            background: var(--bg-soft);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .security h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .security-grid { grid-template-columns: 1fr 1fr; } }
+        .sec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+        .sec-icon {
+            width: 28px; height: 28px;
+            background: white;
+            border: 1px solid var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .sec-item strong { color: var(--dark); }
+
+        /* === CTA FINAL === */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            padding: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: white;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) { .final-cta h2 { font-size: 40px; } }
+        .final-cta p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.92);
+            max-width: 580px;
+            margin: 0 auto 32px;
+        }
+        .final-cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-brand .brand-icon { background: var(--primary); }
+        .footer-desc {
+            line-height: 1.6;
+            margin-bottom: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-iso-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color .15s;
+        }
+        .footer-col a:hover { color: white; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* === RESPONSIVE NAV (mobile) === */
+        @media (max-width: 900px) {
+            .nav-desktop { display: none; }
+            .header-mobile-cta { display: flex !important; }
+        }
+        @media (min-width: 901px) {
+            .header-mobile-cta { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================================================================== -->
+<!-- HEADER STICKY                                                          -->
+<!-- ===================================================================== -->
+<header class="site-header" role="banner">
+    <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="TrackSyst SMSI">
+            <span class="brand-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="white">
+                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </span>
+            TrackSyst&nbsp;SMSI
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-desktop">
+                <li><a href="#pourquoi">Pourquoi</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#livrables">Livrables</a></li>
+                <li><a href="#audiences">Pour qui ?</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-cta">
+            <a href="https://app.tracksyst.cloud" class="btn btn-ghost" rel="nofollow">Se connecter</a>
+            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary">
+                Demander une démo
+            </a>
+        </div>
+        <div class="header-mobile-cta" style="display:none;">
+            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary">Démo</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===================================================================== -->
+<!-- HERO                                                                   -->
+<!-- ===================================================================== -->
+<section class="hero" id="top">
+    <div class="container hero-inner">
+        <div>
+            <span class="hero-badge">
+                <span aria-hidden="true">🛡️</span> ISO/IEC 27001:2022 · Annexe A · 93 contrôles
+            </span>
+            <h1>
+                La plateforme tout-en-un pour gérer et auditer votre
+                <span class="highlight">conformité ISO 27001</span>
+            </h1>
+            <p class="hero-sub">
+                Centralisez votre conformité, vos risques, vos contrôles et votre plan d'actions.
+                Générez en un clic vos livrables d'audit. Tracez chaque modification grâce à un
+                <strong>journal d'audit natif § 9.2</strong>. Multi-organisations strictement isolées.
+            </p>
+            <div class="hero-ctas">
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary btn-lg">
+                    🚀 Demander une démo
+                </a>
+                <a href="#modules" class="btn btn-outline btn-lg">Découvrir la plateforme</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">93</div>
+                    <div class="lab">contrôles Annexe&nbsp;A préchargés</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">7</div>
+                    <div class="lab">livrables d'audit générés auto</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">6</div>
+                    <div class="lab">modules intégrés</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mock-up dashboard SMSI -->
+        <div class="hero-mock" aria-hidden="true">
+            <div class="hero-mock-bar">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="hero-mock-title">📊 Tableau de bord SMSI · ACME Industries</div>
+            <div class="hero-kpis">
+                <div class="hero-kpi success">
+                    <div class="val">68 %</div>
+                    <div class="lab">Taux mise en œuvre SoA</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="val">93/93</div>
+                    <div class="lab">Contrôles évalués</div>
+                </div>
+                <div class="hero-kpi danger">
+                    <div class="val">12</div>
+                    <div class="lab">Risques critiques</div>
+                </div>
+                <div class="hero-kpi">
+                    <div class="val">47</div>
+                    <div class="lab">Actions ouvertes</div>
+                </div>
+            </div>
+            <div class="hero-mock-list">
+                <div class="hero-mock-row">
+                    <span class="lbl">RGPD — Article 32</span>
+                    <span class="val">Conforme</span>
+                </div>
+                <div class="hero-mock-row">
+                    <span class="lbl">NIS2 — Article 21</span>
+                    <span class="val">Partiel</span>
+                </div>
+                <div class="hero-mock-row">
+                    <span class="lbl">A.8.2 — Droits d'accès</span>
+                    <span class="val">Implémenté</span>
+                </div>
+                <div class="hero-mock-row">
+                    <span class="lbl">A.5.30 — Continuité TIC</span>
+                    <span class="val">À évaluer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- POURQUOI                                                               -->
+<!-- ===================================================================== -->
+<section class="alt" id="pourquoi">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Pourquoi TrackSyst SMSI</span>
+            <h2 class="section-title">L'ISO 27001 est exigeante. Le passer en Excel est devenu intenable.</h2>
+            <p class="section-sub">
+                Les PME industrielles et leurs RSSI méritent un outil pensé pour la réalité du terrain.
+            </p>
+        </div>
+
+        <div class="compare-grid">
+            <div class="compare-col bad">
+                <h3>Sans outil dédié</h3>
+                <ul>
+                    <li>Excel éparpillé entre plusieurs disques et collaborateurs</li>
+                    <li>SoA tenue manuellement, formules qui cassent au moindre changement</li>
+                    <li>Plans d'actions perdus dans Outlook ou des post-its</li>
+                    <li>Aucun audit log § 9.2 : impossible de retracer qui a changé quoi</li>
+                    <li>Stress pré-audit : reconstruction du dossier en urgence</li>
+                    <li>Perte de connaissance au départ du RSSI : zéro continuité</li>
+                </ul>
+            </div>
+            <div class="compare-col good">
+                <h3>Avec TrackSyst SMSI</h3>
+                <ul>
+                    <li>Toutes les données SMSI centralisées dans une seule plateforme web</li>
+                    <li>SoA des 93 contrôles Annexe A préchargée et reliée aux risques</li>
+                    <li>Plan d'actions unifié multi-origines (NC, audits, revue, RGPD…)</li>
+                    <li>Audit log natif § 9.2 : qui, quoi, quand, avant/après — tracé en BDD</li>
+                    <li>Livrables d'audit générés en 1 clic (Excel, PDF, PowerPoint)</li>
+                    <li>Multi-organisations strictement isolées (scoping <code>client_id</code> forcé)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- WORKFLOW                                                               -->
+<!-- ===================================================================== -->
+<section id="workflow">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Workflow ISO</span>
+            <h2 class="section-title">Le workflow ISO 27001 reflété dans l'outil</h2>
+            <p class="section-sub">
+                De l'analyse du contexte au pilotage de la revue de direction, 5 étapes structurées.
+            </p>
+        </div>
+        <div class="workflow">
+            <div class="step"><div class="step-num">1</div><div class="step-name">Contexte</div><div class="step-iso">§ 4</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-name">Risques</div><div class="step-iso">§ 6.1.2 · 8.2</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-name">SoA</div><div class="step-iso">§ 6.1.3 d</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-name">Plan d'actions</div><div class="step-iso">§ 6.2 · 10</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-name">Pilotage</div><div class="step-iso">§ 9.1 · 9.3</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- MODULES                                                                -->
+<!-- ===================================================================== -->
+<section class="alt" id="modules">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">6 modules intégrés</span>
+            <h2 class="section-title">De la conformité réglementaire au pilotage SMSI</h2>
+            <p class="section-sub">Tout est connecté nativement. Pas d'imports/exports manuels entre modules.</p>
+        </div>
+
+        <div class="modules-grid">
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">📋</div>
+                <h3>Conformité</h3>
+                <div class="module-iso">§ 4.2 · A.5.31 · A.5.34</div>
+                <p>Registre des exigences légales, réglementaires, contractuelles, internes et normatives. Évaluations périodiques tracées.</p>
+            </div>
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">📦</div>
+                <h3>Actifs</h3>
+                <div class="module-iso">A.5.9 · A.5.10</div>
+                <p>Inventaire des actifs informationnels avec propriétaire et valeur CIA (Confidentialité, Intégrité, Disponibilité). Volet RGPD intégré.</p>
+            </div>
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">⚠️</div>
+                <h3>Risques</h3>
+                <div class="module-iso">§ 6.1.2 · 8.2</div>
+                <p>Appréciation actifs/menaces/vulnérabilités selon ISO 27005. Matrice de criticité paramétrable. Heatmap inhérente + résiduelle.</p>
+            </div>
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">✅</div>
+                <h3>SoA</h3>
+                <div class="module-iso">§ 6.1.3 d</div>
+                <p>93 contrôles de l'Annexe A préchargés. Applicabilité justifiée, statut de mise en œuvre, référence documentaire.</p>
+            </div>
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">🎯</div>
+                <h3>Plan d'actions</h3>
+                <div class="module-iso">§ 6.2 · 9.2 · 10.1 · 10.2</div>
+                <p>Registre unifié multi-origines (NC, audits, revue, incidents). Preuves justificatives attachées. Vérification d'efficacité tracée.</p>
+            </div>
+            <div class="module">
+                <div class="module-icon" aria-hidden="true">📊</div>
+                <h3>Pilotage SMSI</h3>
+                <div class="module-iso">§ 9.1 · 9.3</div>
+                <p>Dashboard temps réel, indicateurs § 9.1, exports Excel/PDF/PowerPoint, document de revue de direction § 9.3.2 a-g.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- LIVRABLES (section bleue)                                              -->
+<!-- ===================================================================== -->
+<section class="deliverables-section" id="livrables">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Livrables d'audit</span>
+            <h2 class="section-title">7 livrables générés automatiquement</h2>
+            <p class="section-sub">
+                Tout ce dont vous avez besoin pour présenter votre SMSI à l'auditeur de certification.
+            </p>
+        </div>
+        <div class="deliverables-grid">
+            <div class="deliverable">
+                <div class="deliverable-icon">📊</div>
+                <div class="deliverable-text">
+                    <strong>Déclaration d'Applicabilité</strong>
+                    <span>Excel — 93 contrôles avec justifications inclusion/exclusion</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">⚠️</div>
+                <div class="deliverable-text">
+                    <strong>Registre des risques</strong>
+                    <span>Excel + PDF imprimable paysage avec scoring</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">🎯</div>
+                <div class="deliverable-text">
+                    <strong>Registre des actions</strong>
+                    <span>Excel + PDF avec filtres respectés (responsable, statut, priorité)</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">📄</div>
+                <div class="deliverable-text">
+                    <strong>Rapport SMSI complet</strong>
+                    <span>PDF — livrable principal pour l'auditeur de certification</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">🎤</div>
+                <div class="deliverable-text">
+                    <strong>Revue de direction</strong>
+                    <span>PowerPoint § 9.3.2 a-g, template 15 slides</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">📦</div>
+                <div class="deliverable-text">
+                    <strong>Pack Excel consolidé</strong>
+                    <span>Multi-feuilles : Synthèse + 6 onglets détails</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">📋</div>
+                <div class="deliverable-text">
+                    <strong>Audit log ISO § 9.2</strong>
+                    <span>Mutations tracées en BDD avec export CSV</span>
+                </div>
+            </div>
+            <div class="deliverable">
+                <div class="deliverable-icon">📁</div>
+                <div class="deliverable-text">
+                    <strong>Exports par module</strong>
+                    <span>Conformité, SoA, Actifs en Excel natif</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- BÉNÉFICES                                                              -->
+<!-- ===================================================================== -->
+<section id="benefices">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Bénéfices mesurables</span>
+            <h2 class="section-title">Ce que vous gagnez concrètement</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="b-num">−70 %</div>
+                <div class="b-lab">de temps de préparation d'audit</div>
+            </div>
+            <div class="benefit">
+                <div class="b-num">100 %</div>
+                <div class="b-lab">de traçabilité ISO § 9.2</div>
+            </div>
+            <div class="benefit">
+                <div class="b-num">93</div>
+                <div class="b-lab">contrôles préchargés et reliés</div>
+            </div>
+            <div class="benefit">
+                <div class="b-num">0 €</div>
+                <div class="b-lab">d'installation · 0 formation longue</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- AUDIENCES                                                              -->
+<!-- ===================================================================== -->
+<section class="alt" id="audiences">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Pour qui ?</span>
+            <h2 class="section-title">Conçu pour deux profils</h2>
+            <p class="section-sub">Une plateforme, deux usages — toujours rigoureuse, jamais réductrice.</p>
+        </div>
+        <div class="audiences-grid">
+            <div class="audience">
+                <div class="audience-icon" aria-hidden="true">👤</div>
+                <h3>RSSI &amp; DSI de PME</h3>
+                <div class="audience-sub">50 à 500 salariés</div>
+                <p>
+                    Vous cherchez un outil <strong>simple, structuré et conforme</strong> pour piloter
+                    votre SMSI sans Excel ni consultant externe à plein temps. TrackSyst vous donne
+                    le cadre normatif clé en main, du contexte ISO § 4 à la revue de direction § 9.3.
+                </p>
+            </div>
+            <div class="audience">
+                <div class="audience-icon" aria-hidden="true">🎓</div>
+                <h3>Consultants ISO 27001</h3>
+                <div class="audience-sub">Plateforme multi-clients</div>
+                <p>
+                    Vous accompagnez plusieurs PME vers la certification. TrackSyst vous offre une
+                    plateforme <strong>rigoureuse et autonomisante</strong> qui industrialise votre
+                    méthodologie. Onboarding nouveau client en 60 secondes par invitation email.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- SÉCURITÉ                                                               -->
+<!-- ===================================================================== -->
+<section id="securite">
+    <div class="container">
+        <div class="security">
+            <h3>🔐 Sécurité et conformité de la plateforme elle-même</h3>
+            <div class="security-grid">
+                <div class="sec-item">
+                    <div class="sec-icon">🛡️</div>
+                    <div><strong>Multi-tenant strict</strong> — scoping <code>client_id</code> forcé par construction, aucun risque de leak cross-tenant.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon">📋</div>
+                    <div><strong>Audit log natif</strong> — toute mutation tracée (qui, quoi, quand, avant/après) en base de données append-only.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon">🇫🇷</div>
+                    <div><strong>Hébergement OVH France</strong> — données stockées en Union européenne, conformité RGPD native.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon">🔑</div>
+                    <div><strong>Authentification forte</strong> — bcrypt cost 12, sessions HTTPOnly + Secure + SameSite, CSRF protection.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- CTA FINAL                                                              -->
+<!-- ===================================================================== -->
+<section id="contact">
+    <div class="container">
+        <div class="final-cta">
+            <h2>Prêt à reprendre le contrôle de votre SMSI ?</h2>
+            <p>
+                Demandez une démonstration de 15 minutes adaptée à votre contexte.
+                Aucune installation, aucun engagement.
+            </p>
+            <div class="final-cta-buttons">
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-white btn-lg">
+                    ✉ Demander une démo
+                </a>
+                <a href="https://app.tracksyst.cloud" class="btn btn-outline btn-lg" style="background: transparent; color: white; border-color: white;" rel="nofollow">
+                    🔗 Se connecter à l'app
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================================== -->
+<!-- FOOTER                                                                 -->
+<!-- ===================================================================== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <span class="brand-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="white">
+                            <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
+                            <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </span>
+                    TrackSyst SMSI
+                </div>
+                <p class="footer-desc">
+                    Plateforme française de management de la sécurité de l'information
+                    conforme ISO/IEC 27001:2022. Pensée pour les RSSI de PME et les consultants
+                    ISO 27001.
+                </p>
+                <span class="footer-iso-badge">🛡️ ISO/IEC 27001:2022 · Annexe A</span>
+            </div>
+
+            <div class="footer-col">
+                <h4>Produit</h4>
+                <ul>
+                    <li><a href="#modules">Modules</a></li>
+                    <li><a href="#livrables">Livrables d'audit</a></li>
+                    <li><a href="#workflow">Workflow ISO</a></li>
+                    <li><a href="#securite">Sécurité</a></li>
+                    <li><a href="https://app.tracksyst.cloud" rel="nofollow">Se connecter</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI">Demander une démo</a></li>
+                    <li><a href="mailto:support@tracksyst.cloud">Support</a></li>
+                    <li><a href="mailto:support@tracksyst.cloud?subject=Question%20commerciale%20TrackSyst%20SMSI">Question commerciale</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="/mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=CGU%20TrackSyst">CGU (sur demande)</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=RGPD%20TrackSyst">Politique RGPD</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=Politique%20cookies">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom" style="display:block; text-align:center; line-height:1.7;">
+            <strong style="color: rgba(255,255,255,0.85);">WEBMANITECH SARL</strong> — RC 74599 — IF 66050358 — ICE 003564783000079<br>
+            Siège : Lot 403, Immeuble 10, Étage 3, Mehdia 2, Kénitra — Maroc<br>
+            SARL au capital de 100 000 MAD — <a href="mailto:contact@webmanitech.com" style="color: rgba(255,255,255,0.75);">contact@webmanitech.com</a><br>
+            <span style="display: inline-block; margin-top: 10px;">
+                Hébergement utilisateurs : OVH SAS, France — © 2026 TrackSyst · Tous droits réservés
+            </span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
