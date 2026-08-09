@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackSyst — Plateforme française de management intégré QSEÉ pour PME</title>
-    <meta name="description" content="TrackSyst réunit vos systèmes de management ISO (qualité 9001, environnement 14001, sécurité info 27001, santé-sécurité 45001, énergie 50001) dans une seule application web française. Pour PME industrielles et consultants ISO.">
+    <meta name="description" content="TrackSyst réunit vos systèmes de management (ISO 9001, 14001, 27001, 45001, 50001 et MASE) dans une seule application web française. Un socle commun : le contexte, les parties intéressées et les processus se saisissent une fois et servent tous vos référentiels. Pour PME industrielles et consultants QSE.">
     <meta name="keywords" content="ISO 27001, ISO 9001, ISO 14001, ISO 45001, ISO 50001, QSE, QSEÉ, management intégré, RSSI, qualité, environnement, SaaS français, PME industrielle">
     <meta name="author" content="WebManiTech SARL — éditeur de TrackSyst">
 
     <!-- Open Graph -->
     <meta property="og:title" content="TrackSyst — Plateforme française de management intégré QSEÉ">
-    <meta property="og:description" content="Pilotez tous vos systèmes de management ISO dans une plateforme intégrée. SMSI disponible, SMQ/SME/SMS&ST/SMÉ à venir. Solution française pour PME.">
+    <meta property="og:description" content="Pilotez tous vos systèmes de management dans une plateforme intégrée : le contexte, les parties intéressées et les processus se saisissent une fois et servent tous vos référentiels. SMSI disponible, SMQ en cours, SME/SMS&amp;ST/SMEn/MASE à venir. Solution française pour PME.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tracksyst.cloud/">
     <meta property="og:locale" content="fr_FR">
@@ -19,7 +19,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TrackSyst — Plateforme française de management intégré QSEÉ">
-    <meta name="twitter:description" content="Pilotez tous vos systèmes de management ISO dans une plateforme intégrée pour PME.">
+    <meta name="twitter:description" content="Six référentiels, un seul socle. Pilotez tous vos systèmes de management dans une plateforme intégrée pour PME.">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -56,9 +56,9 @@
         },
         {
           "@type": "SoftwareApplication",
-          "name": "TrackSyst SMSI",
+          "name": "TrackSyst",
           "applicationCategory": "BusinessApplication",
-          "description": "Plateforme française pour gérer la conformité ISO 27001:2022.",
+          "description": "Plateforme francaise de pilotage des systemes de management : un socle commun aux chapitres 4 a 10 de la structure harmonisee, et un module par referentiel (ISO 9001, 14001, 27001, 45001, 50001, MASE).",
           "operatingSystem": "Web",
           "url": "https://app.tracksyst.cloud",
           "publisher": { "@type": "Organization", "name": "WebManiTech SARL" }
@@ -70,7 +70,7 @@
     <style>
         /* =====================================================================
            LANDING RACINE TrackSyst — tracksyst.cloud
-           Plateforme QSEÉ ombrelle : SMSI · SMQ · SME · SMS&ST · SMÉ
+           Plateforme QSEÉ ombrelle : SMSI · SMQ · SME · SMS&ST · SMEn · MASE
            Self-contained, mobile-first, zéro dépendance externe.
            ===================================================================== */
 
@@ -87,6 +87,7 @@
             --c-sme:    #059669;
             --c-sst:    #991b1b;
             --c-sme-e:  #f59e0b;
+            --c-mase:   #7c3aed;
             --dark: #0f172a;
             --gray-900: #1a1a1a;
             --gray-700: #495057;
@@ -278,7 +279,7 @@
             gap: 12px;
         }
 
-        /* Visuel hero : 5 boucliers QSEÉ */
+        /* Visuel hero : 6 boucliers, un par référentiel */
         .shield-cluster {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -690,7 +691,7 @@
         </nav>
         <div class="nav-cta">
             <a href="https://app.tracksyst.cloud" class="btn btn-primary" rel="nofollow">
-                Accéder à l'app SMSI
+                Accéder à l'application
             </a>
         </div>
         <div class="header-mobile-cta" style="display:none;">
@@ -706,17 +707,17 @@
     <div class="container hero-inner">
         <div>
             <span class="hero-badge">
-                <span aria-hidden="true">🇫🇷</span> Plateforme française · 5 modules ISO
+                <span aria-hidden="true">🇫🇷</span> Plateforme française · 6 référentiels
             </span>
             <h1>
                 Pilotez tous vos systèmes de management dans une
                 <span class="highlight">plateforme intégrée</span>
             </h1>
             <p class="hero-sub">
-                TrackSyst réunit les systèmes ISO (Qualité&nbsp;9001, Environnement&nbsp;14001,
-                Sécurité&nbsp;de&nbsp;l'information&nbsp;27001, Santé-Sécurité&nbsp;45001,
-                Énergie&nbsp;50001) dans une application web française. Pour
-                <strong>PME industrielles</strong> et <strong>consultants ISO</strong>.
+                Un socle commun, un module par référentiel : ISO&nbsp;9001, 14001, 27001,
+                45001, 50001 et MASE. Le contexte, les parties intéressées et les processus se
+                saisissent <strong>une seule fois</strong> et servent tous vos systèmes. Pour
+                <strong>PME industrielles</strong> et <strong>consultants QSE</strong>.
             </p>
             <div class="hero-ctas">
                 <a href="#modules" class="btn btn-primary btn-lg">
@@ -728,7 +729,7 @@
             </div>
         </div>
 
-        <!-- Visuel : 5 boucliers couleurs distinctes -->
+        <!-- Visuel : 6 boucliers, une couleur par référentiel -->
         <div class="shield-cluster" aria-hidden="true">
             <div class="shield-card">
                 <div class="shield" style="background: var(--c-smsi);">
@@ -744,7 +745,7 @@
                 </div>
                 <div class="mod-name">SMQ</div>
                 <div class="mod-iso">ISO 9001</div>
-                <span class="mod-badge soon">Bientôt</span>
+                <span class="mod-badge soon">En cours</span>
             </div>
             <div class="shield-card">
                 <div class="shield" style="background: var(--c-sme);">
@@ -766,16 +767,17 @@
                 <div class="shield" style="background: var(--c-sme-e);">
                     <svg width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/></svg>
                 </div>
-                <div class="mod-name">SMÉ</div>
+                <div class="mod-name">SMEn</div>
                 <div class="mod-iso">ISO 50001</div>
                 <span class="mod-badge soon">Bientôt</span>
             </div>
-            <div class="shield-card" style="background: var(--bg-soft); border-style: dashed;">
-                <div class="shield" style="background: var(--gray-300);">
-                    <span style="font-size: 24px; color: white;">+</span>
+            <div class="shield-card">
+                <div class="shield" style="background: var(--c-mase);">
+                    <svg width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/></svg>
                 </div>
-                <div class="mod-name" style="color: var(--gray-500);">Intégré</div>
-                <div class="mod-iso">QSEÉ unifié</div>
+                <div class="mod-name">MASE</div>
+                <div class="mod-iso">Référentiel MASE</div>
+                <span class="mod-badge soon">Bientôt</span>
             </div>
         </div>
     </div>
@@ -793,7 +795,7 @@
             </div>
             <div class="benefits-item">
                 <span class="ico" aria-hidden="true">🔗</span>
-                <span>Modules intégrés — pas de silos</span>
+                <span>Saisi une fois, servi partout</span>
             </div>
             <div class="benefits-item">
                 <span class="ico" aria-hidden="true">📊</span>
@@ -812,17 +814,19 @@
 </section>
 
 <!-- ===================================================================== -->
-<!-- 5 MODULES                                                              -->
+<!-- 6 REFERENTIELS                                                              -->
 <!-- ===================================================================== -->
 <section class="alt" id="modules">
     <div class="container">
         <div class="section-head">
-            <span class="section-eyebrow">5 modules</span>
+            <span class="section-eyebrow">6 référentiels, un seul socle</span>
             <h2 class="section-title">Pour votre management intégré QSEÉ</h2>
             <p class="section-sub">
-                Une seule plateforme pour piloter tous vos systèmes de management ISO.
-                Pas d'imports/exports manuels entre référentiels. Actifs, risques, actions et
-                audits partagés nativement.
+                Les chapitres 4 à 10 sont identiques dans toutes les normes à structure
+                harmonisée : dans TrackSyst ils ne sont écrits qu'une fois. Enjeux,
+                parties intéressées, processus, objectifs, indicateurs, actions, audits internes
+                et revue de direction sont partagés par vos référentiels — pas d'imports, pas de
+                double saisie, pas de versions qui divergent.
             </p>
         </div>
 
@@ -851,7 +855,7 @@
                 </div>
                 <h3>SMQ</h3>
                 <div class="mod-iso-ref">ISO 9001:2015</div>
-                <span class="mod-status soon">🚧 Bientôt</span>
+                <span class="mod-status soon">🔨 En développement</span>
                 <p class="mod-desc">
                     Système de management de la qualité. Cartographie processus, audits internes,
                     non-conformités, actions correctives, revue de direction qualité, satisfaction
@@ -892,12 +896,12 @@
                 <a href="mailto:contact@webmanitech.com?subject=%C3%8Atre%20inform%C3%A9%20de%20la%20sortie%20du%20module%20SMS%26ST" class="mod-cta">Être informé →</a>
             </div>
 
-            <!-- SMÉ -->
+            <!-- SMEn -->
             <div class="mod-card" style="--mod-color: var(--c-sme-e);">
                 <div class="mod-shield">
                     <svg width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/></svg>
                 </div>
-                <h3>SMÉ</h3>
+                <h3>SMEn</h3>
                 <div class="mod-iso-ref">ISO 50001:2018</div>
                 <span class="mod-status soon">🚧 Bientôt</span>
                 <p class="mod-desc">
@@ -908,18 +912,35 @@
                 <a href="mailto:contact@webmanitech.com?subject=%C3%8Atre%20inform%C3%A9%20de%20la%20sortie%20du%20module%20SM%C3%89" class="mod-cta">Être informé →</a>
             </div>
 
-            <!-- Carte "Intégration" -->
+            <!-- MASE -->
+            <div class="mod-card" style="--mod-color: var(--c-mase);">
+                <div class="mod-shield">
+                    <svg width="28" height="28" viewBox="0 0 16 16" fill="white"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/></svg>
+                </div>
+                <h3>MASE</h3>
+                <div class="mod-iso-ref">Référentiel MASE</div>
+                <span class="mod-status soon">🚧 Bientôt</span>
+                <p class="mod-desc">
+                    Le référentiel santé-sécurité-environnement des entreprises intervenantes.
+                    Axes du référentiel, questionnaire d'audit coté, score par axe, plan
+                    d'amélioration et suivi des intervenants et des sous-traitants.
+                </p>
+                <a href="mailto:contact@webmanitech.com?subject=%C3%8Atre%20inform%C3%A9%20de%20la%20sortie%20du%20module%20MASE" class="mod-cta">Être informé →</a>
+            </div>
+
+            <!-- Carte "Socle commun" -->
             <div class="mod-card" style="--mod-color: var(--dark); background: var(--bg-soft); border-style: dashed;">
                 <div class="mod-shield" style="background: var(--dark);">
                     <span style="font-size: 28px; color: white;">∞</span>
                 </div>
-                <h3>Management intégré</h3>
-                <div class="mod-iso-ref">QSEÉ unifié</div>
-                <span class="mod-status live" style="background: #e0e7ff; color: #4338ca;">Vision plateforme</span>
+                <h3>Le socle commun</h3>
+                <div class="mod-iso-ref">Structure harmonisée</div>
+                <span class="mod-status live" style="background: #e0e7ff; color: #4338ca;">Le cœur du produit</span>
                 <p class="mod-desc">
-                    Les 5 modules partagent une couche commune : organisations, utilisateurs,
-                    actifs, risques, plan d'actions, audits, revue de direction. Pas de double
-                    saisie. Une seule certification IMS possible.
+                    Ce n'est pas une option, c'est l'architecture. Enjeux, parties intéressées,
+                    processus, politique, objectifs, indicateurs, actions, audits internes,
+                    non-conformités et revue de direction vivent dans le socle et servent tous
+                    les modules activés. Un module n'ajoute que ce qui lui est propre.
                 </p>
                 <a href="#pourquoi" class="mod-cta">En savoir plus →</a>
             </div>
@@ -943,9 +964,11 @@
                 <div class="why-icon" aria-hidden="true">🏗️</div>
                 <h3>Pensé pour le management intégré</h3>
                 <p>
-                    Les modules partagent <strong>actifs, risques, actions, audits</strong>.
-                    Évitez le travail en double entre vos systèmes ISO. Une non-conformité
-                    qualité peut générer une action sécurité info, automatiquement.
+                    Les chapitres 4 à 10 sont communs à toutes les normes à structure harmonisée :
+                    <strong>enjeux, parties intéressées, processus, objectifs, indicateurs,
+                    actions, audits internes et revue de direction</strong> vivent dans un socle
+                    partagé. Une non-conformité qualité peut déclencher une action sécurité de
+                    l'information, sans la ressaisir.
                 </p>
             </div>
             <div class="why-col">
@@ -1014,9 +1037,9 @@
         <div class="team-card">
             <h3>🏢 WebManiTech SARL</h3>
             <p style="color: var(--gray-700); font-size: 15px;">
-                Éditeur français du SMSI ISO 27001. Société spécialisée dans l'industrialisation
-                des systèmes de management certifiables, au croisement de l'audit normatif
-                et du développement logiciel.
+                Éditeur de TrackSyst. Société spécialisée dans l'industrialisation des systèmes
+                de management certifiables, au croisement de l'audit normatif et du développement
+                logiciel.
             </p>
 
             <div class="team-expertise">
@@ -1080,9 +1103,9 @@
                     TrackSyst
                 </div>
                 <p class="footer-desc">
-                    Plateforme française de management intégré QSEÉ. Cinq systèmes de management
-                    ISO (qualité, environnement, sécurité info, santé-sécurité, énergie) réunis
-                    dans une application web unique.
+                    Plateforme française de management intégré QSEÉ. Six référentiels — qualité,
+                    environnement, sécurité de l'information, santé-sécurité, énergie et MASE —
+                    réunis sur un socle commun, dans une application web unique.
                 </p>
             </div>
 
@@ -1103,7 +1126,8 @@
                     <li><a href="mailto:contact@webmanitech.com?subject=Module%20SMQ">SMQ · ISO 9001</a></li>
                     <li><a href="mailto:contact@webmanitech.com?subject=Module%20SME">SME · ISO 14001</a></li>
                     <li><a href="mailto:contact@webmanitech.com?subject=Module%20SMS%26ST">SMS&amp;ST · ISO 45001</a></li>
-                    <li><a href="mailto:contact@webmanitech.com?subject=Module%20SM%C3%89">SMÉ · ISO 50001</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=Module%20SMEn">SMEn · ISO 50001</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=Module%20MASE">MASE · Référentiel MASE</a></li>
                 </ul>
             </div>
 
