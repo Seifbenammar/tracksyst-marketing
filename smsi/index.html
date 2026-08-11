@@ -3,53 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackSyst SMSI — Plateforme ISO 27001 pour PME et consultants</title>
-    <meta name="description" content="Plateforme française tout-en-un pour gérer et auditer votre conformité ISO/IEC 27001:2022. SoA 93 contrôles préchargés, gestion des risques, plan d'actions, audit log natif et 7 livrables d'audit générés automatiquement.">
-    <meta name="keywords" content="ISO 27001, SMSI, RSSI, conformité, sécurité information, ISO 27001:2022, SoA, audit log, plan d'actions, PME industrielle, consultant ISO 27001">
+    <title>TrackSyst — Module SMSI ISO 27001 : sécurité de l'information</title>
+    <meta name="description" content="Module SMSI de TrackSyst : SoA 93 contrôles Annexe A, appréciation des risques ISO 27005, conformité, plan d'actions et audit log natif. Sur le socle commun §§ 4-10.">
     <meta name="author" content="TrackSyst — WebManiTech SARL">
-
-    <!-- Open Graph (partage social) -->
-    <meta property="og:title" content="TrackSyst SMSI — Plateforme ISO 27001 pour PME">
-    <meta property="og:description" content="Centralisez votre conformité ISO 27001. SoA 93 contrôles, risques, plan d'actions, 7 livrables d'audit auto-générés. Hébergement France.">
+    <meta property="og:title" content="TrackSyst — Module SMSI ISO 27001 : sécurité de l'information">
+    <meta property="og:description" content="Module SMSI de TrackSyst : SoA 93 contrôles Annexe A, appréciation des risques ISO 27005, conformité, plan d'actions et audit log natif. Sur le socle commun §§ 4-10.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tracksyst.cloud/smsi">
+    <meta property="og:url" content="https://tracksyst.cloud/smsi/">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="TrackSyst SMSI">
-
-    <!-- Twitter Card -->
+    <meta property="og:site_name" content="TrackSyst">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TrackSyst SMSI — Plateforme ISO 27001 pour PME">
-    <meta name="twitter:description" content="Plateforme française tout-en-un pour gérer et auditer votre conformité ISO 27001.">
-
-    <!-- Favicons (référence dossier projet TrackSyst) -->
+    <meta name="twitter:title" content="TrackSyst — Module SMSI ISO 27001 : sécurité de l'information">
+    <meta name="twitter:description" content="Module SMSI de TrackSyst : SoA 93 contrôles Annexe A, appréciation des risques ISO 27005, conformité, plan d'actions et audit log natif. Sur le socle commun §§ 4-10.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <meta name="theme-color" content="#0d6efd">
-
-    <!-- Schema.org SoftwareApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "TrackSyst SMSI",
+      "name": "TrackSyst — Module SMSI",
       "applicationCategory": "BusinessApplication",
-      "description": "Plateforme française tout-en-un pour gérer et auditer la conformité ISO/IEC 27001:2022.",
+      "description": "Module SMSI de TrackSyst : SoA 93 contrôles Annexe A, appréciation des risques ISO 27005, conformité, plan d'actions et audit log natif. Sur le socle commun §§ 4-10.",
       "operatingSystem": "Web",
       "url": "https://app.tracksyst.cloud",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "TrackSyst",
-        "url": "https://tracksyst.cloud"
-      }
+      "offers": { "@type": "Offer", "priceCurrency": "EUR" },
+      "publisher": { "@type": "Organization", "name": "TrackSyst", "url": "https://tracksyst.cloud" }
     }
     </script>
-
     <style>
         /* ==================================================================
            LANDING PAGE TrackSyst SMSI — tracksyst.cloud/smsi
@@ -867,38 +850,41 @@
         @media (min-width: 901px) {
             .header-mobile-cta { display: none !important; }
         }
+    
+        .brand-module-chip {
+            display: inline-block; margin-left: 8px; padding: 2px 9px;
+            background: var(--primary-light); color: var(--primary-dark);
+            border-radius: 6px; font-size: 12.5px; font-weight: 700;
+            letter-spacing: 0.4px; vertical-align: 2px;
+        }
+        .other-modules-strip {
+            text-align: center; padding: 14px 20px; background: var(--bg-soft);
+            border-top: 1px solid var(--border); font-size: 14px; color: var(--gray-500);
+        }
+        .other-modules-strip a { font-weight: 600; }
     </style>
 </head>
 <body>
 
-<!-- ===================================================================== -->
-<!-- HEADER STICKY                                                          -->
-<!-- ===================================================================== -->
+<!-- HEADER STICKY -->
 <header class="site-header" role="banner">
     <div class="container header-inner">
-        <a href="#top" class="brand" aria-label="TrackSyst SMSI">
-            <span class="brand-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="white">
-                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
-                    <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                </svg>
-            </span>
-            TrackSyst&nbsp;SMSI
+        <a href="/" class="brand" aria-label="TrackSyst — accueil">
+            <span class="brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="white" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span>
+            TrackSyst<span class="brand-module-chip">SMSI</span>
         </a>
         <nav aria-label="Navigation principale">
             <ul class="nav-desktop">
                 <li><a href="#pourquoi">Pourquoi</a></li>
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#livrables">Livrables</a></li>
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#socle">Socle commun</a></li>
                 <li><a href="#audiences">Pour qui ?</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/#modules">Tous les modules</a></li>
             </ul>
         </nav>
         <div class="nav-cta">
             <a href="https://app.tracksyst.cloud" class="btn btn-ghost" rel="nofollow">Se connecter</a>
-            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary">
-                Demander une démo
-            </a>
+            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary">Demander une démo</a>
         </div>
         <div class="header-mobile-cta" style="display:none;">
             <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary">Démo</a>
@@ -906,282 +892,193 @@
     </div>
 </header>
 
-<!-- ===================================================================== -->
-<!-- HERO                                                                   -->
-<!-- ===================================================================== -->
+<!-- HERO -->
 <section class="hero" id="top">
     <div class="container hero-inner">
         <div>
-            <span class="hero-badge">
-                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span> ISO/IEC 27001:2022 · Annexe A · 93 contrôles
-            </span>
-            <h1>
-                La plateforme tout-en-un pour gérer et auditer votre
-                <span class="highlight">conformité ISO 27001</span>
-            </h1>
-            <p class="hero-sub">
-                Centralisez votre conformité, vos risques, vos contrôles et votre plan d'actions.
-                Générez en un clic vos livrables d'audit. Tracez chaque modification grâce à un
-                <strong>journal d'audit natif § 9.2</strong>. Multi-organisations strictement isolées.
-            </p>
+            <span class="hero-badge"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span> ISO/IEC 27001:2022 · Annexe A · 93 contrôles</span>
+            <h1>Pilotez votre <span class="highlight">sécurité de l'information</span> sur un socle ISO commun</h1>
+            <p class="hero-sub">Le module SMSI de TrackSyst couvre ISO/IEC 27001:2022 de bout en bout : SoA des 93 contrôles de l'Annexe A, appréciation des risques selon <strong>ISO 27005</strong> (actif × menace × vulnérabilité), registre de conformité et plan d'actions — sur le socle commun §§ 4-10 partagé avec vos autres référentiels.</p>
             <div class="hero-ctas">
-                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary btn-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/></svg> Demander une démo
-                </a>
-                <a href="#modules" class="btn btn-outline btn-lg">Découvrir la plateforme</a>
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/></svg> Demander une démo</a>
+                <a href="#fonctionnalites" class="btn btn-outline btn-lg">Découvrir le module</a>
             </div>
             <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="num">93</div>
-                    <div class="lab">contrôles Annexe&nbsp;A préchargés</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">7</div>
-                    <div class="lab">livrables d'audit générés auto</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">6</div>
-                    <div class="lab">modules intégrés</div>
-                </div>
+<div class="hero-stat"><div class="num">93</div><div class="lab">contrôles Annexe A préchargés</div></div>
+<div class="hero-stat"><div class="num">27005</div><div class="lab">méthode d'appréciation des risques</div></div>
+<div class="hero-stat"><div class="num">SoA</div><div class="lab">déclaration d'applicabilité native</div></div>
             </div>
         </div>
-
-        <!-- Mock-up dashboard SMSI -->
         <div class="hero-mock" aria-hidden="true">
-            <div class="hero-mock-bar">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="hero-mock-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/></svg> Tableau de bord SMSI · ACME Industries</div>
+            <div class="hero-mock-bar"><span></span><span></span><span></span></div>
+            <div class="hero-mock-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/></svg> Tableau de bord SMSI · ACME INDUSTRIES</div>
             <div class="hero-kpis">
-                <div class="hero-kpi success">
-                    <div class="val">68 %</div>
-                    <div class="lab">Taux mise en œuvre SoA</div>
-                </div>
-                <div class="hero-kpi">
-                    <div class="val">93/93</div>
-                    <div class="lab">Contrôles évalués</div>
-                </div>
-                <div class="hero-kpi danger">
-                    <div class="val">12</div>
-                    <div class="lab">Risques critiques</div>
-                </div>
-                <div class="hero-kpi">
-                    <div class="val">47</div>
-                    <div class="lab">Actions ouvertes</div>
-                </div>
+<div class="hero-kpi success"><div class="val">68 %</div><div class="lab">Taux mise en œuvre SoA</div></div>
+<div class="hero-kpi "><div class="val">93/93</div><div class="lab">Contrôles évalués</div></div>
+<div class="hero-kpi danger"><div class="val">12</div><div class="lab">Risques critiques</div></div>
+<div class="hero-kpi "><div class="val">47</div><div class="lab">Actions ouvertes</div></div>
             </div>
             <div class="hero-mock-list">
-                <div class="hero-mock-row">
-                    <span class="lbl">RGPD — Article 32</span>
-                    <span class="val">Conforme</span>
-                </div>
-                <div class="hero-mock-row">
-                    <span class="lbl">NIS2 — Article 21</span>
-                    <span class="val">Partiel</span>
-                </div>
-                <div class="hero-mock-row">
-                    <span class="lbl">A.8.2 — Droits d'accès</span>
-                    <span class="val">Implémenté</span>
-                </div>
-                <div class="hero-mock-row">
-                    <span class="lbl">A.5.30 — Continuité TIC</span>
-                    <span class="val">À évaluer</span>
-                </div>
+<div class="hero-mock-row"><span class="lbl">RGPD — Article 32</span><span class="val">Conforme</span></div>
+<div class="hero-mock-row"><span class="lbl">NIS2 — Article 21</span><span class="val">Partiel</span></div>
+<div class="hero-mock-row"><span class="lbl">A.8.2 — Droits d'accès</span><span class="val">Implémenté</span></div>
+<div class="hero-mock-row"><span class="lbl">A.5.30 — Continuité TIC</span><span class="val">À évaluer</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- POURQUOI                                                               -->
-<!-- ===================================================================== -->
+<!-- POURQUOI -->
 <section class="alt" id="pourquoi">
     <div class="container">
         <div class="section-head">
-            <span class="section-eyebrow">Pourquoi TrackSyst SMSI</span>
-            <h2 class="section-title">L'ISO 27001 est exigeante. Le passer en Excel est devenu intenable.</h2>
-            <p class="section-sub">
-                Les PME industrielles et leurs RSSI méritent un outil pensé pour la réalité du terrain.
-            </p>
+            <span class="section-eyebrow">Pourquoi le module SMSI</span>
+            <h2 class="section-title">L'ISO 27001 est exigeante. La passer en Excel est devenu intenable.</h2>
+            <p class="section-sub">Les PME et leurs RSSI méritent un outil pensé pour la réalité du terrain.</p>
         </div>
-
         <div class="compare-grid">
             <div class="compare-col bad">
                 <h3>Sans outil dédié</h3>
                 <ul>
-                    <li>Excel éparpillé entre plusieurs disques et collaborateurs</li>
-                    <li>SoA tenue manuellement, formules qui cassent au moindre changement</li>
-                    <li>Plans d'actions perdus dans Outlook ou des post-its</li>
-                    <li>Aucun audit log § 9.2 : impossible de retracer qui a changé quoi</li>
-                    <li>Stress pré-audit : reconstruction du dossier en urgence</li>
-                    <li>Perte de connaissance au départ du RSSI : zéro continuité</li>
+<li>SoA tenue manuellement, formules qui cassent au moindre changement</li>
+<li>Analyse de risques dans un classeur que personne n'ose rouvrir</li>
+<li>Plans d'actions perdus dans Outlook ou des post-its</li>
+<li>Aucun audit log § 9.2 : impossible de retracer qui a changé quoi</li>
+<li>Stress pré-audit : reconstruction du dossier en urgence</li>
+<li>Perte de connaissance au départ du RSSI : zéro continuité</li>
                 </ul>
             </div>
             <div class="compare-col good">
-                <h3>Avec TrackSyst SMSI</h3>
+                <h3>Avec TrackSyst</h3>
                 <ul>
-                    <li>Toutes les données SMSI centralisées dans une seule plateforme web</li>
-                    <li>SoA des 93 contrôles Annexe A préchargée et reliée aux risques</li>
-                    <li>Plan d'actions unifié multi-origines (NC, audits, revue, RGPD…)</li>
-                    <li>Audit log natif § 9.2 : qui, quoi, quand, avant/après — tracé en BDD</li>
-                    <li>Livrables d'audit générés en 1 clic (Excel, PDF, PowerPoint)</li>
-                    <li>Multi-organisations strictement isolées (scoping <code>client_id</code> forcé)</li>
+<li>SoA des 93 contrôles Annexe A préchargée et reliée aux risques</li>
+<li>Appréciation ISO 27005 : actifs, menaces, vulnérabilités, heatmap</li>
+<li>Plan d'actions unifié multi-origines (NC, audits, revue, RGPD…)</li>
+<li>Audit log natif § 9.2 : qui, quoi, quand — tracé en base</li>
+<li>Registre de conformité légale, réglementaire et contractuelle</li>
+<li>Multi-organisations strictement isolées, prêt pour le multi-normes</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- WORKFLOW                                                               -->
-<!-- ===================================================================== -->
+<!-- WORKFLOW -->
 <section id="workflow">
     <div class="container">
         <div class="section-head">
-            <span class="section-eyebrow">Workflow ISO</span>
-            <h2 class="section-title">Le workflow ISO 27001 reflété dans l'outil</h2>
-            <p class="section-sub">
-                De l'analyse du contexte au pilotage de la revue de direction, 5 étapes structurées.
-            </p>
+            <span class="section-eyebrow">Workflow</span>
+            <h2 class="section-title">La démarche ISO/IEC 27001:2022 reflétée dans l'outil</h2>
+            <p class="section-sub">Du contexte de l'organisme au pilotage, 5 étapes structurées.</p>
         </div>
         <div class="workflow">
-            <div class="step"><div class="step-num">1</div><div class="step-name">Contexte</div><div class="step-iso">§ 4</div></div>
-            <div class="step"><div class="step-num">2</div><div class="step-name">Risques</div><div class="step-iso">§ 6.1.2 · 8.2</div></div>
-            <div class="step"><div class="step-num">3</div><div class="step-name">SoA</div><div class="step-iso">§ 6.1.3 d</div></div>
-            <div class="step"><div class="step-num">4</div><div class="step-name">Plan d'actions</div><div class="step-iso">§ 6.2 · 10</div></div>
-            <div class="step"><div class="step-num">5</div><div class="step-name">Pilotage</div><div class="step-iso">§ 9.1 · 9.3</div></div>
+<div class="step"><div class="step-num">1</div><div class="step-name">Contexte</div><div class="step-iso">§ 4</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-name">Risques 27005</div><div class="step-iso">§ 6.1.2 · 8.2</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-name">SoA</div><div class="step-iso">§ 6.1.3 d</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-name">Plan d'actions</div><div class="step-iso">§ 6.2 · 10</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-name">Pilotage</div><div class="step-iso">§ 9.1 · 9.3</div></div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- MODULES                                                                -->
-<!-- ===================================================================== -->
-<section class="alt" id="modules">
+<!-- FONCTIONNALITÉS -->
+<section class="alt" id="fonctionnalites">
     <div class="container">
         <div class="section-head">
-            <span class="section-eyebrow">6 modules intégrés</span>
-            <h2 class="section-title">De la conformité réglementaire au pilotage SMSI</h2>
-            <p class="section-sub">Tout est connecté nativement. Pas d'imports/exports manuels entre modules.</p>
+            <span class="section-eyebrow">Fonctionnalités du module</span>
+            <h2 class="section-title">La méthode métier, outillée de bout en bout</h2>
+            <p class="section-sub">La méthode suggère, l'organisme décide — chaque écart est motivé et tracé.</p>
         </div>
-
         <div class="modules-grid">
-            <div class="module">
+<div class="module">
                 <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg></div>
                 <h3>Conformité</h3>
                 <div class="module-iso">§ 4.2 · A.5.31 · A.5.34</div>
                 <p>Registre des exigences légales, réglementaires, contractuelles, internes et normatives. Évaluations périodiques tracées.</p>
             </div>
-            <div class="module">
+<div class="module">
                 <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg></div>
                 <h3>Actifs</h3>
                 <div class="module-iso">A.5.9 · A.5.10</div>
-                <p>Inventaire des actifs informationnels avec propriétaire et valeur CIA (Confidentialité, Intégrité, Disponibilité). Volet RGPD intégré.</p>
+                <p>Inventaire des actifs informationnels avec propriétaire et valeur CIA (Confidentialité, Intégrité, Disponibilité).</p>
             </div>
-            <div class="module">
-                <div class="module-icon" aria-hidden="true">⚠️</div>
-                <h3>Risques</h3>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/> <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg></div>
+                <h3>Risques ISO 27005</h3>
                 <div class="module-iso">§ 6.1.2 · 8.2</div>
-                <p>Appréciation actifs/menaces/vulnérabilités selon ISO 27005. Matrice de criticité paramétrable. Heatmap inhérente + résiduelle.</p>
+                <p>Appréciation actif × menace × vulnérabilité. Matrice de criticité, heatmap inhérente et résiduelle, traitement motivé.</p>
             </div>
-            <div class="module">
-                <div class="module-icon" aria-hidden="true">✅</div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/></svg></div>
                 <h3>SoA</h3>
                 <div class="module-iso">§ 6.1.3 d</div>
                 <p>93 contrôles de l'Annexe A préchargés. Applicabilité justifiée, statut de mise en œuvre, référence documentaire.</p>
             </div>
-            <div class="module">
+<div class="module">
                 <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/> <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/></svg></div>
                 <h3>Plan d'actions</h3>
-                <div class="module-iso">§ 6.2 · 9.2 · 10.1 · 10.2</div>
-                <p>Registre unifié multi-origines (NC, audits, revue, incidents). Preuves justificatives attachées. Vérification d'efficacité tracée.</p>
+                <div class="module-iso">§ 6.2 · 10.1 · 10.2</div>
+                <p>Registre unifié multi-origines (NC, audits, revue, incidents). Vérification d'efficacité tracée.</p>
             </div>
-            <div class="module">
+<div class="module">
                 <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/></svg></div>
                 <h3>Pilotage SMSI</h3>
                 <div class="module-iso">§ 9.1 · 9.3</div>
-                <p>Dashboard temps réel, indicateurs § 9.1, exports Excel/PDF/PowerPoint, document de revue de direction § 9.3.2 a-g.</p>
+                <p>Dashboard temps réel, indicateurs § 9.1, revue de direction § 9.3.2 avec éléments d'entrée générés.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- LIVRABLES (section bleue)                                              -->
-<!-- ===================================================================== -->
-<section class="deliverables-section" id="livrables">
+<!-- SOCLE COMMUN (section bleue → couleur module) -->
+<section class="deliverables-section" id="socle">
     <div class="container">
         <div class="section-head">
-            <span class="section-eyebrow">Livrables d'audit</span>
-            <h2 class="section-title">7 livrables générés automatiquement</h2>
+            <span class="section-eyebrow">Socle commun §§ 4-10</span>
+            <h2 class="section-title">Un socle partagé entre tous vos référentiels</h2>
             <p class="section-sub">
-                Tout ce dont vous avez besoin pour présenter votre SMSI à l'auditeur de certification.
+                Les chapitres 4 à 10 de la structure harmonisée sont saisis une fois et servis
+                dans chaque module actif. Ajoutez un référentiel sans repartir de zéro.
             </p>
         </div>
         <div class="deliverables-grid">
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Déclaration d'Applicabilité</strong>
-                    <span>Excel — 93 contrôles avec justifications inclusion/exclusion</span>
-                </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5zM3 4v2h4.5V4zm5.5 0v2H13V4zM3 10v2h4.5v-2zm5.5 0v2H13v-2zM1 1v2h3.5V1zm4.5 0v2h5V1zm6 0v2H15V1zM1 7v2h3.5V7zm4.5 0v2h5V7zm6 0v2H15V7zM1 13v2h3.5v-2zm4.5 0v2h5v-2zm6 0v2H15v-2z"/></svg></div>
+                <div class="deliverable-text"><strong>Enjeux de l'organisme</strong><span>§ 4.1 — interne/externe, PESTEL, SWOT, importance 1-4</span></div>
             </div>
-            <div class="deliverable">
-                <div class="deliverable-icon">⚠️</div>
-                <div class="deliverable-text">
-                    <strong>Registre des risques</strong>
-                    <span>Excel + PDF imprimable paysage avec scoring</span>
-                </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></svg></div>
+                <div class="deliverable-text"><strong>Parties intéressées</strong><span>§ 4.2 — pouvoir/légitimité/urgence, exigences par PI</span></div>
             </div>
-            <div class="deliverable">
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/></svg></div>
+                <div class="deliverable-text"><strong>Processus</strong><span>§ 4.4 — fiches SIPOC, cartographie, pilotes</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/> <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/></svg></div>
+                <div class="deliverable-text"><strong>Risques & opportunités</strong><span>§ 6.1 — gravité × probabilité, brut et résiduel</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/> <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/></svg></div>
+                <div class="deliverable-text"><strong>Pilotage</strong><span>§ 6.2 — orientations, objectifs, indicateurs, mesures</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg></div>
+                <div class="deliverable-text"><strong>Revues de direction</strong><span>§ 9.3 — éléments d'entrée § 9.3.2 générés automatiquement</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/> <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg></div>
+                <div class="deliverable-text"><strong>Non-conformités</strong><span>§ 10.2 — sources, causes racines, actions raccordées</span></div>
+            </div>
+<div class="deliverable">
                 <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/> <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Registre des actions</strong>
-                    <span>Excel + PDF avec filtres respectés (responsable, statut, priorité)</span>
-                </div>
-            </div>
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/> <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Rapport SMSI complet</strong>
-                    <span>PDF — livrable principal pour l'auditeur de certification</span>
-                </div>
-            </div>
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/> <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Revue de direction</strong>
-                    <span>PowerPoint § 9.3.2 a-g, template 15 slides</span>
-                </div>
-            </div>
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5zM3 12v-2h2v2zm0 1h2v2H4a1 1 0 0 1-1-1zm3 2v-2h3v2zm4 0v-2h3v1a1 1 0 0 1-1 1zm3-3h-3v-2h3zm-7 0v-2h3v2z"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Pack Excel consolidé</strong>
-                    <span>Multi-feuilles : Synthèse + 6 onglets détails</span>
-                </div>
-            </div>
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/> <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/> <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Audit log ISO § 9.2</strong>
-                    <span>Mutations tracées en BDD avec export CSV</span>
-                </div>
-            </div>
-            <div class="deliverable">
-                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7z"/></svg></div>
-                <div class="deliverable-text">
-                    <strong>Exports par module</strong>
-                    <span>Conformité, SoA, Actifs en Excel natif</span>
-                </div>
+                <div class="deliverable-text"><strong>Plan d'actions</strong><span>registre unifié multi-origines, échéances, efficacité</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- BÉNÉFICES                                                              -->
-<!-- ===================================================================== -->
+<!-- BÉNÉFICES -->
 <section id="benefices">
     <div class="container">
         <div class="section-head">
@@ -1189,29 +1086,15 @@
             <h2 class="section-title">Ce que vous gagnez concrètement</h2>
         </div>
         <div class="benefits-grid">
-            <div class="benefit">
-                <div class="b-num">−70 %</div>
-                <div class="b-lab">de temps de préparation d'audit</div>
-            </div>
-            <div class="benefit">
-                <div class="b-num">100 %</div>
-                <div class="b-lab">de traçabilité ISO § 9.2</div>
-            </div>
-            <div class="benefit">
-                <div class="b-num">93</div>
-                <div class="b-lab">contrôles préchargés et reliés</div>
-            </div>
-            <div class="benefit">
-                <div class="b-num">0 €</div>
-                <div class="b-lab">d'installation · 0 formation longue</div>
-            </div>
+<div class="benefit"><div class="b-num">93</div><div class="b-lab">contrôles préchargés et reliés</div></div>
+<div class="benefit"><div class="b-num">100 %</div><div class="b-lab">de traçabilité ISO § 9.2</div></div>
+<div class="benefit"><div class="b-num">−70 %</div><div class="b-lab">de temps de préparation d'audit</div></div>
+<div class="benefit"><div class="b-num">0 €</div><div class="b-lab">d'installation · 0 formation longue</div></div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- AUDIENCES                                                              -->
-<!-- ===================================================================== -->
+<!-- AUDIENCES -->
 <section class="alt" id="audiences">
     <div class="container">
         <div class="section-head">
@@ -1222,31 +1105,25 @@
         <div class="audiences-grid">
             <div class="audience">
                 <div class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg></div>
-                <h3>RSSI &amp; DSI de PME</h3>
+                <h3>RSSI & DSI de PME</h3>
                 <div class="audience-sub">50 à 500 salariés</div>
-                <p>
-                    Vous cherchez un outil <strong>simple, structuré et conforme</strong> pour piloter
-                    votre SMSI sans Excel ni consultant externe à plein temps. TrackSyst vous donne
-                    le cadre normatif clé en main, du contexte ISO § 4 à la revue de direction § 9.3.
-                </p>
+                <p>Un outil <strong>simple, structuré et conforme</strong> pour piloter votre SMSI sans Excel ni consultant à plein temps — du contexte § 4 à la revue de direction § 9.3.</p>
             </div>
             <div class="audience">
                 <div class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/> <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/></svg></div>
-                <h3>Consultants ISO 27001</h3>
+                <h3>Consultants & auditeurs ISO</h3>
                 <div class="audience-sub">Plateforme multi-clients</div>
                 <p>
-                    Vous accompagnez plusieurs PME vers la certification. TrackSyst vous offre une
-                    plateforme <strong>rigoureuse et autonomisante</strong> qui industrialise votre
-                    méthodologie. Onboarding nouveau client en 60 secondes par invitation email.
+                    Vous accompagnez plusieurs organismes. TrackSyst industrialise votre méthodologie :
+                    chaque client a son espace strictement isolé, avec le socle commun et les modules
+                    qu'il a choisis. Onboarding par invitation e-mail.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- SÉCURITÉ                                                               -->
-<!-- ===================================================================== -->
+<!-- SÉCURITÉ -->
 <section id="securite">
     <div class="container">
         <div class="security">
@@ -1254,11 +1131,11 @@
             <div class="security-grid">
                 <div class="sec-item">
                     <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"/></svg></div>
-                    <div><strong>Multi-tenant strict</strong> — scoping <code>client_id</code> forcé par construction, aucun risque de leak cross-tenant.</div>
+                    <div><strong>Multi-tenant strict</strong> — scoping <code>client_id</code> forcé par construction, aucun risque de fuite entre organisations.</div>
                 </div>
                 <div class="sec-item">
                     <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/> <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/> <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/></svg></div>
-                    <div><strong>Audit log natif</strong> — toute mutation tracée (qui, quoi, quand, avant/après) en base de données append-only.</div>
+                    <div><strong>Audit log natif</strong> — toute mutation tracée (qui, quoi, quand, avant/après) en base de données.</div>
                 </div>
                 <div class="sec-item">
                     <div class="sec-icon"><svg width="24" height="16" viewBox="0 0 3 2" aria-hidden="true" style="border-radius:2px;vertical-align:-1px"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></div>
@@ -1266,91 +1143,72 @@
                 </div>
                 <div class="sec-item">
                     <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/> <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg></div>
-                    <div><strong>Authentification forte</strong> — bcrypt cost 12, sessions HTTPOnly + Secure + SameSite, CSRF protection.</div>
+                    <div><strong>Authentification forte</strong> — bcrypt cost 12, sessions HTTPOnly + Secure + SameSite, protection CSRF.</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- CTA FINAL                                                              -->
-<!-- ===================================================================== -->
+<!-- CTA FINAL -->
 <section id="contact">
     <div class="container">
         <div class="final-cta">
             <h2>Prêt à reprendre le contrôle de votre SMSI ?</h2>
-            <p>
-                Demandez une démonstration de 15 minutes adaptée à votre contexte.
-                Aucune installation, aucun engagement.
-            </p>
+            <p>Démonstration personnalisée de 30 minutes sur votre contexte réel. Aucune installation, aucun engagement.</p>
             <div class="final-cta-buttons">
-                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-white btn-lg">
-                    ✉ Demander une démo
-                </a>
-                <a href="https://app.tracksyst.cloud" class="btn btn-outline btn-lg" style="background: transparent; color: white; border-color: white;" rel="nofollow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/> <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/></svg> Se connecter à l'app
-                </a>
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI" class="btn btn-white btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/></svg> Demander une démo</a>
+                <a href="https://app.tracksyst.cloud" class="btn btn-outline btn-lg" style="background: transparent; color: white; border-color: white;" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/> <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/></svg> Se connecter à l'app</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- FOOTER                                                                 -->
-<!-- ===================================================================== -->
+<div class="other-modules-strip">
+    Les autres modules TrackSyst&nbsp;: <a href="/smq/">SMQ</a> · <a href="/sme/">SME</a> · <a href="/smsst/">SMS&ST</a> · <a href="/smen/">SMEn</a> · <a href="/mase/">MASE</a> — <a href="/#modules">vue d'ensemble</a>
+</div>
+
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
     <div class="container">
         <div class="footer-grid">
             <div>
                 <div class="footer-brand">
-                    <span class="brand-icon" aria-hidden="true">
-                        <svg width="20" height="20" viewBox="0 0 16 16" fill="white">
-                            <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.856C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56z"/>
-                            <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                        </svg>
-                    </span>
-                    TrackSyst SMSI
+                    <span class="brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="white" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span>
+                    TrackSyst
                 </div>
-                <p class="footer-desc">
-                    Plateforme française de management de la sécurité de l'information
-                    conforme ISO/IEC 27001:2022. Pensée pour les RSSI de PME et les consultants
-                    ISO 27001.
-                </p>
+                <p class="footer-desc">Module SMSI de TrackSyst, plateforme française de management intégré QSEÉ. Conforme ISO/IEC 27001:2022, sur le socle commun §§ 4-10.</p>
                 <span class="footer-iso-badge"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-1px"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg> ISO/IEC 27001:2022 · Annexe A</span>
             </div>
-
             <div class="footer-col">
-                <h4>Produit</h4>
+                <h4>Modules</h4>
                 <ul>
-                    <li><a href="#modules">Modules</a></li>
-                    <li><a href="#livrables">Livrables d'audit</a></li>
-                    <li><a href="#workflow">Workflow ISO</a></li>
-                    <li><a href="#securite">Sécurité</a></li>
-                    <li><a href="https://app.tracksyst.cloud" rel="nofollow">Se connecter</a></li>
+<li><a href="/smsi/">SMSI · ISO/IEC 27001:2022</a></li>
+<li><a href="/smq/">SMQ · ISO 9001:2015</a></li>
+<li><a href="/sme/">SME · ISO 14001:2015</a></li>
+<li><a href="/smsst/">SMS&ST · ISO 45001:2018</a></li>
+<li><a href="/smen/">SMEn · ISO 50001:2018</a></li>
+<li><a href="/mase/">MASE · Référentiel MASE V2014</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Ressources</h4>
                 <ul>
+                    <li><a href="/">Site TrackSyst</a></li>
                     <li><a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMSI">Demander une démo</a></li>
                     <li><a href="mailto:support@tracksyst.cloud">Support</a></li>
-                    <li><a href="mailto:support@tracksyst.cloud?subject=Question%20commerciale%20TrackSyst%20SMSI">Question commerciale</a></li>
+                    <li><a href="https://app.tracksyst.cloud" rel="nofollow">Se connecter</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Légal</h4>
                 <ul>
                     <li><a href="/mentions-legales.html">Mentions légales</a></li>
                     <li><a href="mailto:contact@webmanitech.com?subject=CGU%20TrackSyst">CGU (sur demande)</a></li>
                     <li><a href="mailto:contact@webmanitech.com?subject=RGPD%20TrackSyst">Politique RGPD</a></li>
-                    <li><a href="mailto:contact@webmanitech.com?subject=Politique%20cookies">Cookies</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom" style="display:block; text-align:center; line-height:1.7;">
             <strong style="color: rgba(255,255,255,0.85);">WEBMANITECH SARL</strong> — RC 74599 — IF 66050358 — ICE 003564783000079<br>
             Siège : Lot 403, Immeuble 10, Étage 3, Mehdia 2, Kénitra — Maroc<br>
