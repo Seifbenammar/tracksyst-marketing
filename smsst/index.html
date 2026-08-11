@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackSyst — Module SMS&ST ISO 45001 : santé-sécurité au travail</title>
+    <meta name="description" content="Module SMS&ST de TrackSyst : identification des dangers selon la démarche INRS Document Unique — unités de travail, 7 catégories de dangers, criticité G×P×M. Sur le socle commun §§ 4-10.">
+    <meta name="author" content="TrackSyst — WebManiTech SARL">
+    <meta property="og:title" content="TrackSyst — Module SMS&ST ISO 45001 : santé-sécurité au travail">
+    <meta property="og:description" content="Module SMS&ST de TrackSyst : identification des dangers selon la démarche INRS Document Unique — unités de travail, 7 catégories de dangers, criticité G×P×M. Sur le socle commun §§ 4-10.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tracksyst.cloud/smsst/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="TrackSyst">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TrackSyst — Module SMS&ST ISO 45001 : santé-sécurité au travail">
+    <meta name="twitter:description" content="Module SMS&ST de TrackSyst : identification des dangers selon la démarche INRS Document Unique — unités de travail, 7 catégories de dangers, criticité G×P×M. Sur le socle commun §§ 4-10.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <meta name="theme-color" content="#991b1b">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TrackSyst — Module SMS&ST",
+      "applicationCategory": "BusinessApplication",
+      "description": "Module SMS&ST de TrackSyst : identification des dangers selon la démarche INRS Document Unique — unités de travail, 7 catégories de dangers, criticité G×P×M. Sur le socle commun §§ 4-10.",
+      "operatingSystem": "Web",
+      "url": "https://app.tracksyst.cloud",
+      "offers": { "@type": "Offer", "priceCurrency": "EUR" },
+      "publisher": { "@type": "Organization", "name": "TrackSyst", "url": "https://tracksyst.cloud" }
+    }
+    </script>
+    <style>
+        /* ==================================================================
+           LANDING PAGE TrackSyst SMSI — tracksyst.cloud/smsi
+           Mobile-first responsive, self-contained, zéro dépendance externe.
+           Cohérence visuelle avec la plaquette commerciale.
+           ================================================================== */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #991b1b;
+            --primary-dark: #7f1d1d;
+            --primary-light: #fee2e2;
+            --primary-soft: #fef2f2;
+            --dark: #0f172a;
+            --gray-900: #1a1a1a;
+            --gray-700: #495057;
+            --gray-500: #6c757d;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --bg: #ffffff;
+            --bg-soft: #f8fafc;
+            --border: #e2e8f0;
+            --danger: #dc3545;
+            --success: #198754;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 50px rgba(153,27,27,0.18);
+            --radius: 10px;
+            --radius-lg: 16px;
+            --container: 1180px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--gray-900);
+            background: var(--bg);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === HEADER STICKY === */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .brand-icon {
+            width: 36px; height: 36px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-desktop a {
+            color: var(--gray-700);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color .15s;
+        }
+        .nav-desktop a:hover { color: var(--primary); }
+        .nav-cta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* === BOUTONS === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: var(--radius);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all .15s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--gray-700);
+            border-color: transparent;
+            padding: 8px 14px;
+        }
+        .btn-ghost:hover {
+            background: var(--gray-100);
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        .btn-white:hover {
+            background: var(--gray-100);
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .btn-lg {
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 80px 0 100px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(153,27,27,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(153,27,27,0.05) 0%, transparent 50%),
+                linear-gradient(180deg, var(--bg-soft) 0%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (min-width: 1024px) {
+            .hero-inner { grid-template-columns: 1.1fr 1fr; gap: 60px; }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 48px; }
+        }
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+        .hero-sub {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--gray-700);
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 480px;
+        }
+        .hero-stat .num {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .hero-stat .lab {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+
+        /* Mock-up dashboard */
+        .hero-mock {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 18px;
+            border: 1px solid var(--border);
+        }
+        .hero-mock-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .hero-mock-bar span {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--gray-300);
+        }
+        .hero-mock-bar span:nth-child(1) { background: #fc6157; }
+        .hero-mock-bar span:nth-child(2) { background: #fdbc40; }
+        .hero-mock-bar span:nth-child(3) { background: #34c84a; }
+        .hero-mock-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-500);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hero-kpis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .hero-kpi {
+            background: var(--bg-soft);
+            border-radius: 8px;
+            padding: 14px;
+            border-left: 3px solid var(--primary);
+        }
+        .hero-kpi.success { border-left-color: var(--success); }
+        .hero-kpi.danger { border-left-color: var(--danger); }
+        .hero-kpi .val {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1;
+        }
+        .hero-kpi.success .val { color: var(--success); }
+        .hero-kpi.danger .val { color: var(--danger); }
+        .hero-kpi .lab {
+            font-size: 11px;
+            color: var(--gray-500);
+            margin-top: 6px;
+        }
+        .hero-mock-list {
+            background: var(--bg-soft);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+        .hero-mock-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 12px;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-mock-row:last-child { border-bottom: none; }
+        .hero-mock-row .lbl { font-weight: 500; }
+        .hero-mock-row .val {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 11px;
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* === SECTIONS GÉNÉRIQUES === */
+        section { padding: 80px 0; }
+        section.alt { background: var(--bg-soft); }
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 14px;
+            letter-spacing: -0.4px;
+        }
+        @media (min-width: 768px) {
+            .section-title { font-size: 38px; }
+        }
+        .section-sub {
+            font-size: 17px;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* === COMPARATIF === */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .compare-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .compare-col {
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 2px solid;
+        }
+        .compare-col.bad {
+            border-color: #fecaca;
+            background: #fef2f2;
+        }
+        .compare-col.good {
+            border-color: var(--primary);
+            background: var(--primary-soft);
+        }
+        .compare-col h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .compare-col.bad h3 { color: var(--danger); }
+        .compare-col.good h3 { color: var(--primary-dark); }
+        .compare-col ul { list-style: none; }
+        .compare-col li {
+            padding: 10px 0 10px 32px;
+            font-size: 15px;
+            line-height: 1.5;
+            position: relative;
+            color: var(--gray-700);
+        }
+        .compare-col li::before {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .compare-col.bad li::before {
+            content: '✕';
+            background: #fee2e2;
+            color: var(--danger);
+        }
+        .compare-col.good li::before {
+            content: '✓';
+            background: #dcfce7;
+            color: var(--success);
+        }
+
+        /* === WORKFLOW === */
+        .workflow {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .workflow { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+        }
+        .step {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 16px;
+            text-align: center;
+            position: relative;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        .step .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px; height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .step .step-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .step .step-iso {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-family: ui-monospace, "SF Mono", Monaco, monospace;
+        }
+
+        /* === MODULES === */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 640px) { .modules-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .modules-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .module {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all .2s;
+        }
+        .module:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .module-icon {
+            width: 48px; height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .module h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .module .module-iso {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-family: ui-monospace, "SF Mono", Monaco, monospace;
+            margin-bottom: 10px;
+        }
+        .module p {
+            font-size: 14.5px;
+            color: var(--gray-700);
+            line-height: 1.55;
+        }
+
+        /* === LIVRABLES (section bleue) === */
+        .deliverables-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .deliverables-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .deliverables-section .section-eyebrow { color: white; opacity: 0.9; }
+        .deliverables-section .section-title { color: white; }
+        .deliverables-section .section-sub { color: rgba(255,255,255,0.9); }
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        @media (min-width: 640px) { .deliverables-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .deliverables-grid { grid-template-columns: 1fr 1fr; } }
+        .deliverable {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: background .2s;
+        }
+        .deliverable:hover { background: rgba(255,255,255,0.15); }
+        .deliverable-icon {
+            width: 32px; height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .deliverable-text {
+            flex: 1;
+        }
+        .deliverable-text strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .deliverable-text span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* === BÉNÉFICES === */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 1024px) { .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+        .benefit {
+            background: var(--primary-soft);
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-lg);
+            padding: 28px 20px;
+            text-align: center;
+            transition: all .2s;
+        }
+        .benefit:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+        .benefit .b-num {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .benefit .b-lab {
+            font-size: 14px;
+            color: var(--gray-700);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* === AUDIENCES === */
+        .audiences-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) { .audiences-grid { grid-template-columns: 1fr 1fr; } }
+        .audience {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: all .2s;
+        }
+        .audience:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .audience-icon {
+            width: 64px; height: 64px;
+            background: var(--primary-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+        .audience h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .audience .audience-sub {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .audience p {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        /* === SÉCURITÉ === */
+        .security {
+            background: var(--bg-soft);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .security h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .security-grid { grid-template-columns: 1fr 1fr; } }
+        .sec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+        .sec-icon {
+            width: 28px; height: 28px;
+            background: white;
+            border: 1px solid var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .sec-item strong { color: var(--dark); }
+
+        /* === CTA FINAL === */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            padding: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: white;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) { .final-cta h2 { font-size: 40px; } }
+        .final-cta p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.92);
+            max-width: 580px;
+            margin: 0 auto 32px;
+        }
+        .final-cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-brand .brand-icon { background: var(--primary); }
+        .footer-desc {
+            line-height: 1.6;
+            margin-bottom: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+        .footer-iso-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color .15s;
+        }
+        .footer-col a:hover { color: white; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* === RESPONSIVE NAV (mobile) === */
+        @media (max-width: 900px) {
+            .nav-desktop { display: none; }
+            .header-mobile-cta { display: flex !important; }
+        }
+        @media (min-width: 901px) {
+            .header-mobile-cta { display: none !important; }
+        }
+    
+        .brand-module-chip {
+            display: inline-block; margin-left: 8px; padding: 2px 9px;
+            background: var(--primary-light); color: var(--primary-dark);
+            border-radius: 6px; font-size: 12.5px; font-weight: 700;
+            letter-spacing: 0.4px; vertical-align: 2px;
+        }
+        .other-modules-strip {
+            text-align: center; padding: 14px 20px; background: var(--bg-soft);
+            border-top: 1px solid var(--border); font-size: 14px; color: var(--gray-500);
+        }
+        .other-modules-strip a { font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER STICKY -->
+<header class="site-header" role="banner">
+    <div class="container header-inner">
+        <a href="/" class="brand" aria-label="TrackSyst — accueil">
+            <span class="brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="white" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span>
+            TrackSyst<span class="brand-module-chip">SMS&ST</span>
+        </a>
+        <nav aria-label="Navigation principale">
+            <ul class="nav-desktop">
+                <li><a href="#pourquoi">Pourquoi</a></li>
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#socle">Socle commun</a></li>
+                <li><a href="#audiences">Pour qui ?</a></li>
+                <li><a href="/#modules">Tous les modules</a></li>
+            </ul>
+        </nav>
+        <div class="nav-cta">
+            <a href="https://app.tracksyst.cloud" class="btn btn-ghost" rel="nofollow">Se connecter</a>
+            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMS%26ST" class="btn btn-primary">Demander une démo</a>
+        </div>
+        <div class="header-mobile-cta" style="display:none;">
+            <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMS%26ST" class="btn btn-primary">Démo</a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+    <div class="container hero-inner">
+        <div>
+            <span class="hero-badge"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span> ISO 45001:2018 · Démarche INRS / DUERP</span>
+            <h1>Vos <span class="highlight">dangers SST</span> dans une démarche Document Unique</h1>
+            <p class="hero-sub">Le module SMS&ST de TrackSyst outille l'identification des dangers § 6.1.2 selon la <strong>démarche INRS</strong> : par unité de travail, 7 catégories de dangers (dont les risques psychosociaux), criticité Gravité × Probabilité × Maîtrise, mesures existantes prises en compte.</p>
+            <div class="hero-ctas">
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMS%26ST" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/></svg> Demander une démo</a>
+                <a href="#fonctionnalites" class="btn btn-outline btn-lg">Découvrir le module</a>
+            </div>
+            <div class="hero-stats">
+<div class="hero-stat"><div class="num">7</div><div class="lab">catégories de dangers (INRS)</div></div>
+<div class="hero-stat"><div class="num">G×P×M</div><div class="lab">criticité par unité de travail</div></div>
+<div class="hero-stat"><div class="num">1-4</div><div class="lab">échelle commune, maîtrise incluse</div></div>
+            </div>
+        </div>
+        <div class="hero-mock" aria-hidden="true">
+            <div class="hero-mock-bar"><span></span><span></span><span></span></div>
+            <div class="hero-mock-title"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/></svg> Dangers SST · SUD MONTAGE INDUSTRIE</div>
+            <div class="hero-kpis">
+<div class="hero-kpi "><div class="val">7</div><div class="lab">Dangers actifs</div></div>
+<div class="hero-kpi "><div class="val">5</div><div class="lab">Unités de travail</div></div>
+<div class="hero-kpi danger"><div class="val">1</div><div class="lab">Criticité ≥ 24</div></div>
+<div class="hero-kpi "><div class="val">1</div><div class="lab">Risque psychosocial</div></div>
+            </div>
+            <div class="hero-mock-list">
+<div class="hero-mock-row"><span class="lbl">Finition — gestes répétitifs (TMS)</span><span class="val">24</span></div>
+<div class="hero-mock-row"><span class="lbl">Magasin — chariots / piétons</span><span class="val">16</span></div>
+<div class="hero-mock-row"><span class="lbl">Maintenance — énergies résiduelles</span><span class="val">8</span></div>
+<div class="hero-mock-row"><span class="lbl">Encadrement — charge mentale</span><span class="val">12</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="alt" id="pourquoi">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Pourquoi le module SMS&ST</span>
+            <h2 class="section-title">Le Document Unique mérite mieux qu'un tableur annuel.</h2>
+            <p class="section-sub">Unités de travail, situations dangereuses, mesures existantes : la démarche INRS en continu.</p>
+        </div>
+        <div class="compare-grid">
+            <div class="compare-col bad">
+                <h3>Sans outil dédié</h3>
+                <ul>
+<li>DUERP mis à jour une fois par an, dans l'urgence réglementaire</li>
+<li>Situations dangereuses décrites de mémoire, sans terrain</li>
+<li>Mesures de prévention existantes jamais valorisées dans la cotation</li>
+<li>Risques psychosociaux absents ou traités à part</li>
+<li>Aucun lien entre l'évaluation et le plan d'actions de prévention</li>
+<li>Historique des versions introuvable au contrôle</li>
+                </ul>
+            </div>
+            <div class="compare-col good">
+                <h3>Avec TrackSyst</h3>
+                <ul>
+<li>Dangers par unité de travail : situation dangereuse, dommage potentiel</li>
+<li>7 catégories INRS : physique, chimique, biologique, ergonomique, psychosocial…</li>
+<li>Criticité G × P × M calculée — la maîtrise existante compte (1 = mesures efficaces)</li>
+<li>Mesures de prévention existantes documentées par danger</li>
+<li>Actions de prévention raccordées au registre du socle, efficacité vérifiée</li>
+<li>Audit log natif : chaque évaluation datée et tracée</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Workflow</span>
+            <h2 class="section-title">La démarche ISO 45001:2018 reflétée dans l'outil</h2>
+            <p class="section-sub">Du contexte de l'organisme au pilotage, 5 étapes structurées.</p>
+        </div>
+        <div class="workflow">
+<div class="step"><div class="step-num">1</div><div class="step-name">Contexte</div><div class="step-iso">§ 4</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-name">Unités de travail</div><div class="step-iso">INRS</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-name">Dangers G×P×M</div><div class="step-iso">§ 6.1.2</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-name">Prévention</div><div class="step-iso">§ 6.2 · 8.1</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-name">Pilotage</div><div class="step-iso">§ 9.1 · 9.3</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FONCTIONNALITÉS -->
+<section class="alt" id="fonctionnalites">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Fonctionnalités du module</span>
+            <h2 class="section-title">La méthode métier, outillée de bout en bout</h2>
+            <p class="section-sub">La méthode suggère, l'organisme décide — chaque écart est motivé et tracé.</p>
+        </div>
+        <div class="modules-grid">
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/> <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z"/></svg></div>
+                <h3>Unités de travail</h3>
+                <div class="module-iso">Démarche INRS</div>
+                <p>Le découpage qui parle au terrain : atelier, magasin, maintenance, encadrement — chaque danger rattaché à son unité.</p>
+            </div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="m9.97 4.88.953 3.811C10.159 8.878 9.14 9 8 9s-2.158-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12m-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.275 3.9C6.8 3.965 7.382 4 8 4s1.2-.036 1.725-.098m4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257z"/></svg></div>
+                <h3>7 catégories de dangers</h3>
+                <div class="module-iso">INRS</div>
+                <p>Physique, chimique, biologique, ergonomique, psychosocial, organisationnel, autre — les RPS comptés comme les autres.</p>
+            </div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z"/></svg></div>
+                <h3>Criticité G×P×M</h3>
+                <div class="module-iso">§ 6.1.2</div>
+                <p>Gravité × Probabilité × Maîtrise en colonnes calculées, échelle 1-4. Les mesures existantes réduisent la cote — c'est visible.</p>
+            </div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M8 4.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V9a.5.5 0 0 1-1 0V7.5H6a.5.5 0 0 1 0-1h1.5V5a.5.5 0 0 1 .5-.5"/></svg></div>
+                <h3>Mesures existantes</h3>
+                <div class="module-iso">§ 8.1</div>
+                <p>EPI, consignation, formations, consignes : documentées par danger, prises en compte dans la maîtrise.</p>
+            </div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/> <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg></div>
+                <h3>Événements & NC</h3>
+                <div class="module-iso">§ 10.2</div>
+                <p>Presqu'accidents, écarts d'audit SSE, remarques CARSAT : registre NC du socle, causes racines, actions.</p>
+            </div>
+<div class="module">
+                <div class="module-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/></svg></div>
+                <h3>Pilotage SST</h3>
+                <div class="module-iso">§ 9.1 · 9.3</div>
+                <p>Tableau de bord dédié : dangers actifs, unités de travail, criticités élevées, part de RPS.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCLE COMMUN (section bleue → couleur module) -->
+<section class="deliverables-section" id="socle">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Socle commun §§ 4-10</span>
+            <h2 class="section-title">Un socle partagé entre tous vos référentiels</h2>
+            <p class="section-sub">
+                Les chapitres 4 à 10 de la structure harmonisée sont saisis une fois et servis
+                dans chaque module actif. Ajoutez un référentiel sans repartir de zéro.
+            </p>
+        </div>
+        <div class="deliverables-grid">
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5zM3 4v2h4.5V4zm5.5 0v2H13V4zM3 10v2h4.5v-2zm5.5 0v2H13v-2zM1 1v2h3.5V1zm4.5 0v2h5V1zm6 0v2H15V1zM1 7v2h3.5V7zm4.5 0v2h5V7zm6 0v2H15V7zM1 13v2h3.5v-2zm4.5 0v2h5v-2zm6 0v2H15v-2z"/></svg></div>
+                <div class="deliverable-text"><strong>Enjeux de l'organisme</strong><span>§ 4.1 — interne/externe, PESTEL, SWOT, importance 1-4</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></svg></div>
+                <div class="deliverable-text"><strong>Parties intéressées</strong><span>§ 4.2 — pouvoir/légitimité/urgence, exigences par PI</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/></svg></div>
+                <div class="deliverable-text"><strong>Processus</strong><span>§ 4.4 — fiches SIPOC, cartographie, pilotes</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/> <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/></svg></div>
+                <div class="deliverable-text"><strong>Risques & opportunités</strong><span>§ 6.1 — gravité × probabilité, brut et résiduel</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/> <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/></svg></div>
+                <div class="deliverable-text"><strong>Pilotage</strong><span>§ 6.2 — orientations, objectifs, indicateurs, mesures</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg></div>
+                <div class="deliverable-text"><strong>Revues de direction</strong><span>§ 9.3 — éléments d'entrée § 9.3.2 générés automatiquement</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/> <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg></div>
+                <div class="deliverable-text"><strong>Non-conformités</strong><span>§ 10.2 — sources, causes racines, actions raccordées</span></div>
+            </div>
+<div class="deliverable">
+                <div class="deliverable-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5z"/> <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/></svg></div>
+                <div class="deliverable-text"><strong>Plan d'actions</strong><span>registre unifié multi-origines, échéances, efficacité</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BÉNÉFICES -->
+<section id="benefices">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Bénéfices mesurables</span>
+            <h2 class="section-title">Ce que vous gagnez concrètement</h2>
+        </div>
+        <div class="benefits-grid">
+<div class="benefit"><div class="b-num">7</div><div class="b-lab">catégories couvertes, RPS inclus</div></div>
+<div class="benefit"><div class="b-num">100 %</div><div class="b-lab">des dangers reliés à la prévention</div></div>
+<div class="benefit"><div class="b-num">−70 %</div><div class="b-lab">de temps de préparation d'audit</div></div>
+<div class="benefit"><div class="b-num">0 €</div><div class="b-lab">d'installation · 0 formation longue</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- AUDIENCES -->
+<section class="alt" id="audiences">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-eyebrow">Pour qui ?</span>
+            <h2 class="section-title">Conçu pour deux profils</h2>
+            <p class="section-sub">Une plateforme, deux usages — toujours rigoureuse, jamais réductrice.</p>
+        </div>
+        <div class="audiences-grid">
+            <div class="audience">
+                <div class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg></div>
+                <h3>Responsables HSE / préventeurs</h3>
+                <div class="audience-sub">Industrie, BTP, logistique</div>
+                <p>Une évaluation des risques <strong>vivante et défendable</strong> — démarche INRS, unités de travail réelles, mesures existantes valorisées, actions suivies.</p>
+            </div>
+            <div class="audience">
+                <div class="audience-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/> <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/></svg></div>
+                <h3>Consultants & auditeurs ISO</h3>
+                <div class="audience-sub">Plateforme multi-clients</div>
+                <p>
+                    Vous accompagnez plusieurs organismes. TrackSyst industrialise votre méthodologie :
+                    chaque client a son espace strictement isolé, avec le socle commun et les modules
+                    qu'il a choisis. Onboarding par invitation e-mail.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SÉCURITÉ -->
+<section id="securite">
+    <div class="container">
+        <div class="security">
+            <h3><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/></svg> Sécurité et conformité de la plateforme elle-même</h3>
+            <div class="security-grid">
+                <div class="sec-item">
+                    <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"/></svg></div>
+                    <div><strong>Multi-tenant strict</strong> — scoping <code>client_id</code> forcé par construction, aucun risque de fuite entre organisations.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/> <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/> <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/></svg></div>
+                    <div><strong>Audit log natif</strong> — toute mutation tracée (qui, quoi, quand, avant/après) en base de données.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon"><svg width="24" height="16" viewBox="0 0 3 2" aria-hidden="true" style="border-radius:2px;vertical-align:-1px"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></div>
+                    <div><strong>Hébergement OVH France</strong> — données stockées en Union européenne, conformité RGPD native.</div>
+                </div>
+                <div class="sec-item">
+                    <div class="sec-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:0"><path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/> <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg></div>
+                    <div><strong>Authentification forte</strong> — bcrypt cost 12, sessions HTTPOnly + Secure + SameSite, protection CSRF.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contact">
+    <div class="container">
+        <div class="final-cta">
+            <h2>Prêt à faire vivre votre démarche de prévention ?</h2>
+            <p>Démonstration personnalisée de 30 minutes sur votre contexte réel. Aucune installation, aucun engagement.</p>
+            <div class="final-cta-buttons">
+                <a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMS%26ST" class="btn btn-white btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z"/></svg> Demander une démo</a>
+                <a href="https://app.tracksyst.cloud" class="btn btn-outline btn-lg" style="background: transparent; color: white; border-color: white;" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/> <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/></svg> Se connecter à l'app</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="other-modules-strip">
+    Les autres modules TrackSyst&nbsp;: <a href="/smsi/">SMSI</a> · <a href="/smq/">SMQ</a> · <a href="/sme/">SME</a> · <a href="/smen/">SMEn</a> · <a href="/mase/">MASE</a> — <a href="/#modules">vue d'ensemble</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <span class="brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="white" aria-hidden="true" style="vertical-align:0"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg></span>
+                    TrackSyst
+                </div>
+                <p class="footer-desc">Module SMS&ST de TrackSyst, plateforme française de management intégré QSEÉ. Conforme ISO 45001:2018, démarche INRS, sur le socle commun §§ 4-10.</p>
+                <span class="footer-iso-badge"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-1px"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg> ISO 45001:2018 · INRS</span>
+            </div>
+            <div class="footer-col">
+                <h4>Modules</h4>
+                <ul>
+<li><a href="/smsi/">SMSI · ISO/IEC 27001:2022</a></li>
+<li><a href="/smq/">SMQ · ISO 9001:2015</a></li>
+<li><a href="/sme/">SME · ISO 14001:2015</a></li>
+<li><a href="/smsst/">SMS&ST · ISO 45001:2018</a></li>
+<li><a href="/smen/">SMEn · ISO 50001:2018</a></li>
+<li><a href="/mase/">MASE · Référentiel MASE V2014</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="/">Site TrackSyst</a></li>
+                    <li><a href="mailto:support@tracksyst.cloud?subject=Demande%20de%20d%C3%A9mo%20TrackSyst%20SMS%26ST">Demander une démo</a></li>
+                    <li><a href="mailto:support@tracksyst.cloud">Support</a></li>
+                    <li><a href="https://app.tracksyst.cloud" rel="nofollow">Se connecter</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="/mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=CGU%20TrackSyst">CGU (sur demande)</a></li>
+                    <li><a href="mailto:contact@webmanitech.com?subject=RGPD%20TrackSyst">Politique RGPD</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="display:block; text-align:center; line-height:1.7;">
+            <strong style="color: rgba(255,255,255,0.85);">WEBMANITECH SARL</strong> — RC 74599 — IF 66050358 — ICE 003564783000079<br>
+            Siège : Lot 403, Immeuble 10, Étage 3, Mehdia 2, Kénitra — Maroc<br>
+            SARL au capital de 100 000 MAD — <a href="mailto:contact@webmanitech.com" style="color: rgba(255,255,255,0.75);">contact@webmanitech.com</a><br>
+            <span style="display: inline-block; margin-top: 10px;">
+                Hébergement utilisateurs : OVH SAS, France — © 2026 TrackSyst · Tous droits réservés
+            </span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
