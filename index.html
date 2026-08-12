@@ -799,7 +799,7 @@
             </div>
             <div class="benefits-item">
                 <span class="ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg></span>
-                <span>Traçabilité ISO native (§ 9.2)</span>
+                <span>Journal d'audit natif — chaque action tracée</span>
             </div>
             <div class="benefits-item">
                 <span class="ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align:-2px"><path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"/></svg></span>
@@ -1136,5 +1136,25 @@
     </div>
 </footer>
 
+
+<script>
+(function(){
+  var map = {'SMSI':'/smsi/','SMQ':'/smq/','SME':'/sme/','SMS&ST':'/smsst/','SMEn':'/smen/','MASE':'/mase/'};
+  document.querySelectorAll('.mod-card').forEach(function(c){
+    var a = c.querySelector('a.mod-cta'); if(!a) return;
+    c.style.cursor = 'pointer';
+    c.addEventListener('click', function(e){
+      if (e.target.closest('a')) return;
+      window.location.href = a.getAttribute('href');
+    });
+  });
+  document.querySelectorAll('.shield-card').forEach(function(c){
+    var n = c.querySelector('.mod-name'); if(!n) return;
+    var url = map[n.textContent.trim()]; if(!url) return;
+    c.style.cursor = 'pointer';
+    c.addEventListener('click', function(){ window.location.href = url; });
+  });
+})();
+</script>
 </body>
 </html>
